@@ -1,4 +1,4 @@
-module vDFF(clock, set, din, dout);
+module vDFF_w_Load(clock, set, din, dout);
 	input clock, set;
 	input [15:0] din;
 	output [15:0] dout;
