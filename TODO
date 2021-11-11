@@ -1,0 +1,22 @@
+- Make a register file
+
+- Make a testbench for the register file. It must contain a
+signal err that is initialized to 0 and set to 1 if error is found
+and stay there thereafter. All tests should finish before t = 500
+
+- do debugging bs, compile in quartus and make sure everything looks
+good
+
+
+- Now do the same for ALU
+
+- Now do the same for the shifter
+
+- now instantiate all in datapath.v and add in the rest of the blocks
+
+- make a tb which should at minimum be able to do mov and add commands
+but to get full marks, it should be able to test more complex shit
+
+- test overall in modelsim
+
+- test on de1
