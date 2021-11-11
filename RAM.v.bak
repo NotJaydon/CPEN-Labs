@@ -3,12 +3,17 @@ module vDFF_w_Load(clock, set, din, dout);
 	input [15:0] din;
 	output [15:0] dout;
 
+	reg [15:0] mux_out;
 	reg [15:0] dout;
 
-	always @(posedge clock) begin
-		if (set == 1'b1)
-			dout = din;
+	always @* begin
+		if (load == 1'b0)
+			mux_out = dout;
 		else
-			dout = dout;
+			mux_out = din;
+	end
+
+	always @(posedge clock) begin
+		out = mux_out;
 	end
 endmodule
