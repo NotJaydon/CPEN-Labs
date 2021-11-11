@@ -8,27 +8,49 @@ z2
 !i10f 100
 cModel Technology
 dE:/intelFPGA_lite/18.1
-vDec38
-Z0 !s110 1636669489
+vALU
+Z0 !s110 1636670756
 !i10b 1
-!s100 dLSRS^HMWGbgQYjgV4`[z3
-IDLecH`>41DYoaNa55bBOV0
+!s100 9zkBk2J]HclIYhMVfHWlH0
+I_I<mlaB7F2>a7h8B]`D5O0
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/jadan/OneDrive/Desktop/CPEN Labs
-w1636657078
-8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v
-FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v
+w1636669520
+8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v
+FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v
 L0 1
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1636669489.000000
-!s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v|
+Z4 !s108 1636670756.000000
+!s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
 !i113 1
 Z5 o-work work
 Z6 tCvgOpt 0
+n@a@l@u
+vDec38
+R0
+!i10b 1
+!s100 dLSRS^HMWGbgQYjgV4`[z3
+IDLecH`>41DYoaNa55bBOV0
+R1
+R2
+w1636657078
+8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v
+FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v|
+!i113 1
+R5
+R6
 n@dec38
 vregfile
 R0
@@ -74,13 +96,13 @@ R5
 R6
 nv@d@f@f
 vvDFF_w_Load
-!s110 1636669017
+R0
 !i10b 1
-!s100 2TJ102an;j0n4zec07iL00
-I>jf=4f2Hkfihhz:Y^8`I72
+!s100 <_d];>@`_3jZYbKej;[gA2
+IYXD?kg:7boDUUOYf3L9`42
 R1
 R2
-w1636667794
+w1636669512
 R7
 R8
 L0 1
@@ -88,7 +110,7 @@ R3
 r1
 !s85 0
 31
-!s108 1636669017.000000
+R4
 R9
 R10
 !i113 1
