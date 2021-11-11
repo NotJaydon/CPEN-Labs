@@ -4,4 +4,11 @@ module ALU(Ain, Bin, ALUop, out, Z);
 	output [15:0] out;
 	output Z;
 
+	reg [15:0] out;
+	reg Z;
+	
+	always @* begin
+		
+	end
+
 endmodule

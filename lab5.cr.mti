@@ -1,17 +1,21 @@
-{C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v}
+{C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module Dec38
 
 Top level modules:
 	Dec38
 
-} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v} {0 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v}
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module vDFF_w_Load
-** Error: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v(10): (vlog-2730) Undefined variable: 'load'.
-** Error: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v(17): (vlog-2730) Undefined variable: 'out'.
 
-} {4.0 6.0} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v}
+Top level modules:
+	vDFF_w_Load
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module regfile
 
