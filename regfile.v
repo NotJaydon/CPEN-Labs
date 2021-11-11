@@ -35,6 +35,7 @@ module regfile(data_in, writenum, write, readnum, clk, data_out);
 			8'b00000100: data_out = register[2];
 			8'b00000010: data_out = register[1];
 			8'b00000001: data_out = register[0];
+			default: data_out = 8'bxxxxxxxx;
 		endcase
 	end
 endmodule
