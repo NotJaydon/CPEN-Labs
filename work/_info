@@ -9,13 +9,13 @@ z2
 cModel Technology
 dE:/intelFPGA_lite/18.1
 vALU
-Z0 !s110 1636733883
+Z0 !s110 1636737916
 !i10b 1
 !s100 ^J8FSE;o:ZPKM=SYTfj8:2
 Iea[?;;_[]mNCbW9:8kQ]L3
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/jadan/OneDrive/Desktop/CPEN Labs
-w1636672270
+w1636736528
 8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v
 FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v
 L0 1
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1636733883.000000
+Z4 !s108 1636737916.000000
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
 !i113 1
@@ -31,7 +31,7 @@ Z5 o-work work
 Z6 tCvgOpt 0
 n@a@l@u
 vdatapath
-Z7 !s110 1636733884
+Z7 !s110 1636737917
 !i10b 1
 !s100 2]VFS0nEn:Z9>MY_n2?o;3
 Im`Bim^C>fL`gTD4L`k9Mf0
@@ -45,7 +45,7 @@ R3
 r1
 !s85 0
 31
-Z8 !s108 1636733884.000000
+Z8 !s108 1636737917.000000
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v|
 !i113 1
@@ -80,7 +80,7 @@ R7
 I_:^62_>C`BiihlTi:A?Nl2
 R1
 R2
-Z9 w1636653491
+Z9 w1636737771
 Z10 8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v
 Z11 FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v
 L0 109
@@ -88,7 +88,7 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 Z12 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
 Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
 !i113 1
@@ -193,7 +193,7 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 R12
 R13
 !i113 1
@@ -245,7 +245,7 @@ R4
 R5
 R6
 vshifter
-R0
+R7
 !i10b 1
 !s100 lIUk^zo66]V=4c15[Q^]03
 IJ2G[SkH:6ICDgzWV<EjBH1
@@ -259,7 +259,7 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v|
 !i113 1
@@ -268,8 +268,8 @@ R6
 vsseg
 R7
 !i10b 1
-!s100 LzAiLVBBBE@i=i?Dz6@611
-IWMzza;76kSil]]noKmF9R2
+!s100 9Z_@P9N>:gHH<Uz_WcRfG3
+I^z[U4LX]O3CimJUD`;in[3
 R1
 R2
 R9
@@ -280,7 +280,7 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 R12
 R13
 !i113 1
@@ -301,7 +301,7 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 R12
 R13
 !i113 1

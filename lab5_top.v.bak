@@ -234,6 +234,5 @@ module sseg(in,segs);
 			14: segs = 7'b0000110;
 			15: segs = 7'b0001110;
 			default: segs = 7'b0111111;
-		endcase
 	end
 endmodule
