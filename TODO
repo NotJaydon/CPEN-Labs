@@ -20,3 +20,105 @@ but to get full marks, it should be able to test more complex shit
 - test overall in modelsim
 
 - test on de1
+
+module RAM(clock, din, set, dout);
+	input clock;
+	input [15:0] din;
+	input [7:0] set;
+	output [7:0] dout [15:0];
+
+	reg [7:0] dout [15:0];
+	wire [7:0] set;
+
+	always @(posedge clock) begin
+		case(set)
+			8'b10000000: begin
+				dout[7] = din;
+				dout[6] = dout[6];
+				dout[5] = dout[5];
+				dout[4] = dout[4];
+				dout[3] = dout[3];
+				dout[2] = dout[2];
+				dout[1] = dout[1];
+				dout[0] = dout[0];
+			end
+
+			8'b01000000: begin
+				dout[7] = dout[7];
+				dout[6] = din;
+				dout[5] = dout[5];
+				dout[4] = dout[4];
+				dout[3] = dout[3];
+				dout[2] = dout[2];
+				dout[1] = dout[1];
+				dout[0] = dout[0];
+			end
+
+			8'b00100000: begin
+				dout[7] = dout[7];
+				dout[6] = dout[6];
+				dout[5] = din;
+				dout[4] = dout[4];
+				dout[3] = dout[3];
+				dout[2] = dout[2];
+				dout[1] = dout[1];
+				dout[0] = dout[0];
+			end
+
+			8'b00010000: begin
+				dout[7] = dout[7];
+				dout[6] = dout[6];
+				dout[5] = dout[5];
+				dout[4] = din;
+				dout[3] = dout[3];
+				dout[2] = dout[2];
+				dout[1] = dout[1];
+				dout[0] = dout[0];
+			end
+
+			8'b00001000: begin
+				dout[7] = dout[7];
+				dout[6] = dout[6];
+				dout[5] = dout[5];
+				dout[4] = dout[4];
+				dout[3] = din;
+				dout[2] = dout[2];
+				dout[1] = dout[1];
+				dout[0] = dout[0];
+			end
+
+			8'b00000100: begin
+				dout[7] = dout[7];
+				dout[6] = dout[6];
+				dout[5] = dout[5];
+				dout[4] = dout[4];
+				dout[3] = dout[3];
+				dout[2] = din;
+				dout[1] = dout[1];
+				dout[0] = dout[0];
+			end
+
+			8'b00000010: begin
+				dout[7] = dout[7];
+				dout[6] = dout[6];
+				dout[5] = dout[5];
+				dout[4] = dout[4];
+				dout[3] = dout[3];
+				dout[2] = dout[2];
+				dout[1] = din;
+				dout[0] = dout[0];
+			end
+
+			8'b00000001: begin
+				dout[7] = dout[7];
+				dout[6] = dout[6];
+				dout[5] = dout[5];
+				dout[4] = dout[4];
+				dout[3] = dout[3];
+				dout[2] = dout[2];
+				dout[1] = dout[1];
+				dout[0] = din;
+			end
+		endcase
+	end
+endmodule
