@@ -1,3 +1,15 @@
+Stuff to test for the reg file
+- does data out get automatically updated as soon as we change readnum
+- check load for various values of writenum and write
+- for various writenums and writes as well as data ins, check to see the values of the
+registers before and after the clock rise. The register that should be
+updated based on the values of writenum (assuming that write) is 1
+should have current value of data in after the clock and all other
+registers should be the same. Then do this again for write = 0, and
+all registers should have the same output value as before the clock
+
+
+
 - Make a register file
 
 - Make a testbench for the register file. It must contain a
