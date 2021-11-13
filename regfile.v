@@ -6,7 +6,7 @@ module regfile(data_in, writenum, write, readnum, clk, data_out);
 
 	wire [7:0] dec_out;
 	wire [7:0] load;
-	wire [7:0] register [15:0];
+	wire [15:0] register [7:0];
 	wire [7:0] dout_selector;
 	reg [15:0] data_out;
 

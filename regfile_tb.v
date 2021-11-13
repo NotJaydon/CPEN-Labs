@@ -26,6 +26,7 @@ input [15:0] task_data_in;
 input [2:0] task_readnum; 
 input [2:0] task_writenum;
 input [7:0] task_load;
+input index;
 
 
 begin
@@ -71,21 +72,25 @@ if(sim_data_out == 1'd0) begin
 end
 #3;
 
-if(regfile_tb.DUT.register !== task_data_in) begin
-	$display("Error[%b:5]: register is %b, expected %b", task_readnum, regfile_tb.DUT.register, task_data_in);
+/*if(regfile_tb.DUT.register[index] !== task_data_in) begin
+	$display("Error[%b:5]: register is %b, expected %b", task_readnum, regfile_tb.DUT.register[index], task_data_in);
 	err = 1'b1;
-end
+end*/
+
+$display("%p", regfile_tb.DUT.register);
 
 #1;
 
 sim_write = 1'b1;
 
-#2;
+#6;
 
-if(regfile_tb.DUT.register !== 1'd0) begin
-	$display("Error[%b:6]: register is %b, expected 0",task_readnum, regfile_tb.DUT.register);
+if(regfile_tb.DUT.register[index] !== 1'd0) begin
+	$display("Error[%b:6]: register is %b, expected 0",task_readnum, regfile_tb.DUT.register[index]);
 	err = 1'b1;
 end
+
+#1;
 
 if(sim_data_out !== 1'd0) begin
 	$display("Error[%b:7]: data_out is %b, expected 0", task_readnum, sim_data_out);
@@ -113,8 +118,14 @@ initial begin
 
 err = 1'b0;
 
-checkreg(16'b0000000000101010,3'b000,3'b000,8'b00000001);
-//checkreg(16'b0000000000100111,3'b001,3'b001,8'b00000010);
+checkreg(16'b0000000000101010,3'b000,3'b000,8'b00000001,0);
+checkreg(16'b0000000000100111,3'b001,3'b001,8'b00000010,1);
+checkreg(16'b0000000111100011,3'b010,3'b010,8'b00000100,2);
+checkreg(16'b1001000100100010,3'b011,3'b011,8'b00001000,3);
+checkreg(16'b0000000000000001,3'b100,3'b100,8'b00010000,4);
+checkreg(16'b0000000000000100,3'b101,3'b101,8'b00100000,5);
+checkreg(16'b0000000000111000,3'b110,3'b110,8'b01000000,6);
+checkreg(16'b0001000000000000,3'b111,3'b111,8'b10000000,7);
 
 if(err == 1'b0)
 	$display("No Errors :)");
