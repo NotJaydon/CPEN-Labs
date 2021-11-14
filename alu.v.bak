@@ -7,7 +7,7 @@ module ALU(Ain, Bin, ALUop, out, Z);
 	reg [15:0] out;
 	reg Z;
 	
-	always @* begin
+	always @* begin		//whenever the ALU operation input changes, the output of the ALU should be updated immediately according the selected operation
 		case(ALUop)
 			2'b00: out = Ain + Bin;
 			2'b01: out = Ain - Bin;
