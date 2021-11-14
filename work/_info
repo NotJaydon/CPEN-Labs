@@ -9,7 +9,7 @@ z2
 cModel Technology
 dE:/intelFPGA_lite/18.1
 vALU
-Z0 !s110 1636758635
+Z0 !s110 1636856034
 !i10b 1
 !s100 ^J8FSE;o:ZPKM=SYTfj8:2
 Iea[?;;_[]mNCbW9:8kQ]L3
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1636758635.000000
+Z4 !s108 1636856034.000000
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
 !i113 1
@@ -31,7 +31,7 @@ Z5 o-work work
 Z6 tCvgOpt 0
 n@a@l@u
 vdatapath
-Z7 !s110 1636758636
+Z7 !s110 1636856035
 !i10b 1
 !s100 2]VFS0nEn:Z9>MY_n2?o;3
 Im`Bim^C>fL`gTD4L`k9Mf0
@@ -45,7 +45,7 @@ R3
 r1
 !s85 0
 31
-Z8 !s108 1636758636.000000
+!s108 1636856035.000000
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v|
 !i113 1
@@ -66,7 +66,7 @@ R3
 r1
 !s85 0
 31
-R4
+Z8 !s108 1636856033.000000
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v|
 !i113 1
@@ -74,7 +74,7 @@ R5
 R6
 n@dec38
 vinput_iface
-R7
+R0
 !i10b 1
 !s100 9=VLblSjgG9jVglRfIOhH2
 I_:^62_>C`BiihlTi:A?Nl2
@@ -88,14 +88,14 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 Z12 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
 Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
 !i113 1
 R5
 R6
 vlab5_check_1
-R7
+R0
 !i10b 1
 !s100 T3ka=^BB;d_AjbA^7f1HI1
 I3zi4fnX^g:`ajQ4LSYJRI2
@@ -109,14 +109,14 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 Z17 !s107 E:/lab5_autograder_check.v|
 Z18 !s90 -reportprogress|300|-work|work|-stats=none|E:/lab5_autograder_check.v|
 !i113 1
 R5
 R6
 vlab5_check_2
-R7
+R0
 !i10b 1
 !s100 6D@D82^C[[R7ek=b@Z@HV0
 IcLz_RNi^_NJdBaD0]F6:_2
@@ -130,14 +130,14 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 R17
 R18
 !i113 1
 R5
 R6
 vlab5_check_3
-R7
+R0
 !i10b 1
 !s100 ?Y0zmS]RZ:l`ZW`_l1A`B3
 I;X8LQE2410BaTP>QMN;:b0
@@ -151,14 +151,14 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 R17
 R18
 !i113 1
 R5
 R6
 vlab5_check_4
-R7
+R0
 !i10b 1
 !s100 9CmmUgcCJg:^J?XI[>9HJ0
 Id`^AiD0Y3oL:DBGMWTj@k2
@@ -172,14 +172,14 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 R17
 R18
 !i113 1
 R5
 R6
 vlab5_top
-R7
+R0
 !i10b 1
 !s100 AIV0M5ZV1AhcPcf@?HTFj3
 I4RBL16naJa3dz;<65HS]U3
@@ -193,7 +193,7 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 R12
 R13
 !i113 1
@@ -217,20 +217,20 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 !s107 E:/lab5_top_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/lab5_top_tb.sv|
 !i113 1
 o-work work -sv
 R6
 vregfile
-R0
+!s110 1636856033
 !i10b 1
-!s100 HbimlikRG427CmB9Shdfc2
-IfL?ekc4EEZ2XAD2ZM[U3;3
+!s100 LKRPBJ<5b2VkcRJz:z<[]0
+IHhHbQV:1knU@m[EO<V31A3
 R1
 R2
-w1636731229
+Z19 w1636851206
 8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v
 FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v
 L0 1
@@ -238,20 +238,20 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v|
 !i113 1
 R5
 R6
 vregfile_tb
-R7
+R0
 !i10b 1
-!s100 ic]OjLOBi>6;Bh4Jd75PV3
-INgU5NgWaP8hRGP^gJeafI1
+!s100 >CC>d[Od^M62?Azf=@`Z[3
+IdTg:moS[VQmbH_a73[<O[3
 R1
 R2
-w1636758482
+R19
 8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v
 FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v
 L0 3
@@ -266,7 +266,7 @@ R4
 R5
 R6
 vshifter
-R7
+R0
 !i10b 1
 !s100 lIUk^zo66]V=4c15[Q^]03
 IJ2G[SkH:6ICDgzWV<EjBH1
@@ -280,14 +280,14 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v|
 !i113 1
 R5
 R6
 vsseg
-R7
+R0
 !i10b 1
 !s100 9Z_@P9N>:gHH<Uz_WcRfG3
 I^z[U4LX]O3CimJUD`;in[3
@@ -301,14 +301,14 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 R12
 R13
 !i113 1
 R5
 R6
 vvDFF
-R7
+R0
 !i10b 1
 !s100 @H=HKBFWk`NIEL2fGUK?B0
 IjCneQLLlNPj?`7Gh=`noD1
@@ -322,7 +322,7 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 R12
 R13
 !i113 1
