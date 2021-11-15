@@ -80,7 +80,8 @@ end
 endtask
 
 
-task adder; //makes dest_r the sum of the first R and the second R with a possible shift 
+task operations; //makes dest_r the [operation] of the first R and the second R with a possible shift 
+input [1:0] task_op;
 input [2:0] dest_R;
 input [2:0] first_R, second_R;
 input[1:0] task_shift;
@@ -92,7 +93,7 @@ sim_loada = 1'b0;
 sim_loadb = 1'b0;
 sim_vsel = 1'b1;
 sim_shift = task_shift;
-sim_ALUop = 2'b00;
+sim_ALUop = task_op;
 sim_write = 1'b0;
 sim_clk = 1'b0;
 
@@ -134,16 +135,28 @@ endtask
 //testing begins here
 initial begin
 err = 1'b0;
-
+//the following is the provided test sequence involving two MOV and one ADD operation
 initialiser(16'b0000000000000001, 16'b0000000000000010, 16'b0000000000100111);
 abs_mover(3'b000, 16'b0000000000000111);
 abs_mover(3'b001, 16'b0000000000000010);
-adder(3'b010,3'b001,3'b000,2'b01);
+operations(2'b00, 3'b010,3'b001,3'b000,2'b01);
 
-if(datapath_tb.DUT.REGFILE.register[2] !== 16'b0000000000010000) begin
-	$display("Error: R2 is %b, expected 16", datapath_tb.DUT.REGFILE.register[2]);
+if(datapath_tb.DUT.REGFILE.R2 !== 16'b0000000000010000) begin
+	$display("Error: R2 is %b, expected 16", datapath_tb.DUT.REGFILE.R2);
 	err = 1'b1;
 end
+
+//The following are other, homemade test sequences
+
+abs_mover(3'b000, 16'b0000000000001101);
+abs_mover(3'b001, 16'b0000000000000111);
+operations(2'b01, 3'b010,3'b000,3'b001,2'b10);
+
+if(datapath_tb.DUT.REGFILE.R2 !== 16'b0000000000001010) begin
+	$display("Error: R2 is %b, expected 10", datapath_tb.DUT.REGFILE.R2);
+	err = 1'b1;
+end
+
 
 if(err == 1'b0)
 	$display("No Errors :)");
