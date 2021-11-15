@@ -53,7 +53,7 @@ if(sim_sout !== 16'b1100000101100010) begin
 end
 
 #5;
-if(err = 1'b0)
+if(err == 1'b0)
 	$display("No Errors :)");
 
 end

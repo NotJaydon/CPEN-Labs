@@ -168,7 +168,7 @@ end
 
 abs_mover(3'b011, 16'b0000000011111000);
 abs_mover(3'b100, 16'b0000000000011111);
-operations(2'b10, 3'b000, 3'b011, 3'b101, 2'b00);
+operations(2'b10, 3'b000, 3'b011, 3'b100, 2'b00);
 
 if(datapath_tb.DUT.REGFILE.R0 !== 16'b0000000000011000) begin
 	$display("Error: R0 is %b, expected 000000000000011000", datapath_tb.DUT.REGFILE.R0);

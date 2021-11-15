@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+//`timescale 1ps/1ps
 
 module regfile_tb;
 
@@ -105,7 +105,7 @@ checkreg(16'b0001000000000000,3'b111,3'b111);
 if(err == 1'b0)
 	$display("No Errors :)");
 
-$stop;
+//$stop;
 
 end
 endmodule

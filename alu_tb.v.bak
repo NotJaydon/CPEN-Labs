@@ -69,6 +69,7 @@ if(sim_Z !== 1'b1) begin
 	$display("Error[Z]: Z is 0, expected 1");
 	err = 1'b1;
 #5;
+end
 
 if(err == 1'b0)
 	$display("No Errors :)");
