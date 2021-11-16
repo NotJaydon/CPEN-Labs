@@ -1,9 +1,51 @@
-{C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v}
+{C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module datapath
+
+Top level modules:
+	datapath
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Dec38
+
+Top level modules:
+	Dec38
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module regfile_tb
 
 Top level modules:
 	regfile_tb
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module vDFF_w_Load
+
+Top level modules:
+	vDFF_w_Load
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module shifter
+
+Top level modules:
+	shifter
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module regfile
+
+Top level modules:
+	regfile
 
 } {} {}} E://lab5_top_tb.sv {1 {vlog -work work -sv -stats=none E:/lab5_top_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
