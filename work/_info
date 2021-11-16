@@ -9,7 +9,7 @@ z2
 cModel Technology
 dE:/intelFPGA_lite/18.1
 vALU
-Z0 !s110 1636933965
+Z0 !s110 1637027584
 !i10b 1
 !s100 ^J8FSE;o:ZPKM=SYTfj8:2
 Iea[?;;_[]mNCbW9:8kQ]L3
@@ -23,15 +23,37 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1636933965.000000
+Z4 !s108 1637027584.000000
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
 !i113 1
 Z5 o-work work
 Z6 tCvgOpt 0
 n@a@l@u
+vALU_tb
+Z7 !s110 1637027585
+!i10b 1
+!s100 FJeX<[18K8<QT_zf3C8hO0
+I4UzG5PP7_Nj4aFna0NFG^0
+R1
+R2
+Z8 w1637022191
+8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu_tb.v
+FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+Z9 !s108 1637027585.000000
+!s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu_tb.v|
+!i113 1
+R5
+R6
+n@a@l@u_tb
 vdatapath
-Z7 !s110 1636933966
+R7
 !i10b 1
 !s100 2]VFS0nEn:Z9>MY_n2?o;3
 Im`Bim^C>fL`gTD4L`k9Mf0
@@ -45,7 +67,7 @@ R3
 r1
 !s85 0
 31
-Z8 !s108 1636933966.000000
+R9
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v|
 !i113 1
@@ -74,23 +96,23 @@ R5
 R6
 n@dec38
 vinput_iface
-R0
+R7
 !i10b 1
 !s100 9=VLblSjgG9jVglRfIOhH2
 I_:^62_>C`BiihlTi:A?Nl2
 R1
 R2
-Z9 w1636737771
-Z10 8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v
-Z11 FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v
+Z10 w1636737771
+Z11 8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v
+Z12 FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v
 L0 109
 R3
 r1
 !s85 0
 31
-R4
-Z12 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
-Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
+R9
+Z13 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
+Z14 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
 !i113 1
 R5
 R6
@@ -101,17 +123,17 @@ R7
 I3zi4fnX^g:`ajQ4LSYJRI2
 R1
 R2
-Z14 w1636650496
-Z15 8E:/lab5_autograder_check.v
-Z16 FE:/lab5_autograder_check.v
+Z15 w1636650496
+Z16 8E:/lab5_autograder_check.v
+Z17 FE:/lab5_autograder_check.v
 L0 7
 R3
 r1
 !s85 0
 31
-R8
-Z17 !s107 E:/lab5_autograder_check.v|
-Z18 !s90 -reportprogress|300|-work|work|-stats=none|E:/lab5_autograder_check.v|
+R9
+Z18 !s107 E:/lab5_autograder_check.v|
+Z19 !s90 -reportprogress|300|-work|work|-stats=none|E:/lab5_autograder_check.v|
 !i113 1
 R5
 R6
@@ -122,17 +144,17 @@ R7
 IcLz_RNi^_NJdBaD0]F6:_2
 R1
 R2
-R14
 R15
 R16
+R17
 L0 84
 R3
 r1
 !s85 0
 31
-R8
-R17
+R9
 R18
+R19
 !i113 1
 R5
 R6
@@ -143,17 +165,17 @@ R7
 I;X8LQE2410BaTP>QMN;:b0
 R1
 R2
-R14
 R15
 R16
+R17
 L0 140
 R3
 r1
 !s85 0
 31
-R8
-R17
+R9
 R18
+R19
 !i113 1
 R5
 R6
@@ -164,38 +186,38 @@ R7
 Id`^AiD0Y3oL:DBGMWTj@k2
 R1
 R2
-R14
 R15
 R16
+R17
 L0 165
 R3
 r1
 !s85 0
 31
-R8
-R17
+R9
 R18
+R19
 !i113 1
 R5
 R6
 vlab5_top
-R0
+R7
 !i10b 1
 !s100 AIV0M5ZV1AhcPcf@?HTFj3
 I4RBL16naJa3dz;<65HS]U3
 R1
 R2
-R9
 R10
 R11
+R12
 L0 57
 R3
 r1
 !s85 0
 31
-R4
-R12
+R9
 R13
+R14
 !i113 1
 R5
 R6
@@ -217,7 +239,7 @@ R3
 r1
 !s85 0
 31
-R8
+R9
 !s107 E:/lab5_top_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|E:/lab5_top_tb.sv|
 !i113 1
@@ -247,11 +269,11 @@ R6
 vregfile_tb
 R0
 !i10b 1
-!s100 >CC>d[Od^M62?Azf=@`Z[3
-IdTg:moS[VQmbH_a73[<O[3
+!s100 0AlbczdPfEf8?_94E[VeK3
+Igf2Ol2^I3083H5<[S1W4X3
 R1
 R2
-w1636851206
+R8
 8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v
 FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile_tb.v
 L0 3
@@ -266,7 +288,7 @@ R4
 R5
 R6
 vshifter
-R0
+R7
 !i10b 1
 !s100 lIUk^zo66]V=4c15[Q^]03
 IJ2G[SkH:6ICDgzWV<EjBH1
@@ -287,44 +309,44 @@ R4
 R5
 R6
 vsseg
-R0
+R7
 !i10b 1
 !s100 9Z_@P9N>:gHH<Uz_WcRfG3
 I^z[U4LX]O3CimJUD`;in[3
 R1
 R2
-R9
 R10
 R11
+R12
 L0 167
 R3
 r1
 !s85 0
 31
-R4
-R12
+R9
 R13
+R14
 !i113 1
 R5
 R6
 vvDFF
-R0
+R7
 !i10b 1
 !s100 @H=HKBFWk`NIEL2fGUK?B0
 IjCneQLLlNPj?`7Gh=`noD1
 R1
 R2
-R9
 R10
 R11
+R12
 L0 148
 R3
 r1
 !s85 0
 31
-R4
-R12
+R9
 R13
+R14
 !i113 1
 R5
 R6

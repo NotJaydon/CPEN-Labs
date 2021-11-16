@@ -1,12 +1,14 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /shifter_tb/sim_in
-add wave -noupdate /shifter_tb/sim_shift
-add wave -noupdate /shifter_tb/sim_sout
-add wave -noupdate /shifter_tb/err
+add wave -noupdate /ALU_tb/sim_Ain
+add wave -noupdate /ALU_tb/sim_Bin
+add wave -noupdate /ALU_tb/sim_ALUop
+add wave -noupdate /ALU_tb/sim_Z
+add wave -noupdate /ALU_tb/sim_out
+add wave -noupdate /ALU_tb/err
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {115 ps} 0}
-quietly wave cursor active 1
+WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+quietly wave cursor active 0
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
