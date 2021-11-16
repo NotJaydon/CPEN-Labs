@@ -1,2 +1,7 @@
 CONTRIBUTIONS
 
+
+Both partners contributed equally to this lab. We worked on the code
+together through the use of GitHub.
+
+:)
