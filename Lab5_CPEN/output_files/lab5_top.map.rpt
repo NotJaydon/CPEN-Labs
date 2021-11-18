@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab5_top
-Sat Nov 13 18:49:01 2021
+Mon Nov 15 16:33:41 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -18,14 +18,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
  11. Parameter Settings for User Entity Instance: input_iface:IN|vDFF:DATA
  12. Parameter Settings for User Entity Instance: input_iface:IN|vDFF:CTRL
- 13. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R7
- 14. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R6
- 15. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R5
- 16. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R4
- 17. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R3
- 18. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R2
- 19. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R1
- 20. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R0
+ 13. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg7
+ 14. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg6
+ 15. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg5
+ 16. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg4
+ 17. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg3
+ 18. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg2
+ 19. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg1
+ 20. Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg0
  21. Parameter Settings for User Entity Instance: datapath:DP|vDFF_w_Load:A
  22. Parameter Settings for User Entity Instance: datapath:DP|vDFF_w_Load:B
  23. Parameter Settings for User Entity Instance: datapath:DP|vDFF_w_Load:C
@@ -58,7 +58,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Nov 13 18:49:01 2021       ;
+; Analysis & Synthesis Status     ; Successful - Mon Nov 15 16:33:41 2021       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; lab5_top                                    ;
 ; Top-level Entity Name           ; lab5_top                                    ;
@@ -182,19 +182,19 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                         ;
-+------------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
-; File Name with User-Entered Path   ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
-+------------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
-; ../../Desktop/CPEN Labs/shifter.v  ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v  ;         ;
-; ../../Desktop/CPEN Labs/regfile.v  ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v  ;         ;
-; ../../Desktop/CPEN Labs/RAM.v      ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v      ;         ;
-; ../../Desktop/CPEN Labs/lab5_top.v ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v ;         ;
-; ../../Desktop/CPEN Labs/Dec38.v    ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v    ;         ;
-; ../../Desktop/CPEN Labs/datapath.v ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v ;         ;
-; ../../Desktop/CPEN Labs/alu.v      ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v      ;         ;
-+------------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; ../shifter.v                     ; yes             ; User Verilog HDL File  ; C:/Users/wmken/Documents/GitHub/CPEN-Labs/shifter.v  ;         ;
+; ../regfile.v                     ; yes             ; User Verilog HDL File  ; C:/Users/wmken/Documents/GitHub/CPEN-Labs/regfile.v  ;         ;
+; ../RAM.v                         ; yes             ; User Verilog HDL File  ; C:/Users/wmken/Documents/GitHub/CPEN-Labs/RAM.v      ;         ;
+; ../lab5_top.v                    ; yes             ; User Verilog HDL File  ; C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v ;         ;
+; ../Dec38.v                       ; yes             ; User Verilog HDL File  ; C:/Users/wmken/Documents/GitHub/CPEN-Labs/Dec38.v    ;         ;
+; ../datapath.v                    ; yes             ; User Verilog HDL File  ; C:/Users/wmken/Documents/GitHub/CPEN-Labs/datapath.v ;         ;
+; ../alu.v                         ; yes             ; User Verilog HDL File  ; C:/Users/wmken/Documents/GitHub/CPEN-Labs/alu.v      ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -234,14 +234,14 @@ refer to the applicable agreement for further details.
 ;       |ALU:U2|               ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|ALU:U2                            ; ALU         ; work         ;
 ;       |regfile:REGFILE|      ; 59 (58)             ; 128 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE                   ; regfile     ; work         ;
 ;          |Dec38:reg_Dec38_2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|Dec38:reg_Dec38_2 ; Dec38       ; work         ;
-;          |vDFF_w_Load:R0|    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R0    ; vDFF_w_Load ; work         ;
-;          |vDFF_w_Load:R1|    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R1    ; vDFF_w_Load ; work         ;
-;          |vDFF_w_Load:R2|    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R2    ; vDFF_w_Load ; work         ;
-;          |vDFF_w_Load:R3|    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R3    ; vDFF_w_Load ; work         ;
-;          |vDFF_w_Load:R4|    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R4    ; vDFF_w_Load ; work         ;
-;          |vDFF_w_Load:R5|    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R5    ; vDFF_w_Load ; work         ;
-;          |vDFF_w_Load:R6|    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R6    ; vDFF_w_Load ; work         ;
-;          |vDFF_w_Load:R7|    ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R7    ; vDFF_w_Load ; work         ;
+;          |vDFF_w_Load:Reg0|  ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg0  ; vDFF_w_Load ; work         ;
+;          |vDFF_w_Load:Reg1|  ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg1  ; vDFF_w_Load ; work         ;
+;          |vDFF_w_Load:Reg2|  ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg2  ; vDFF_w_Load ; work         ;
+;          |vDFF_w_Load:Reg3|  ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg3  ; vDFF_w_Load ; work         ;
+;          |vDFF_w_Load:Reg4|  ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg4  ; vDFF_w_Load ; work         ;
+;          |vDFF_w_Load:Reg5|  ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg5  ; vDFF_w_Load ; work         ;
+;          |vDFF_w_Load:Reg6|  ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg6  ; vDFF_w_Load ; work         ;
+;          |vDFF_w_Load:Reg7|  ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg7  ; vDFF_w_Load ; work         ;
 ;       |shifter:U1|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|shifter:U1                        ; shifter     ; work         ;
 ;       |vDFF_w_Load:A|        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|vDFF_w_Load:A                     ; vDFF_w_Load ; work         ;
 ;       |vDFF_w_Load:B|        ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5_top|datapath:DP|vDFF_w_Load:B                     ; vDFF_w_Load ; work         ;
@@ -315,83 +315,83 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R7 ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; k              ; 16    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg7 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; k              ; 16    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R6 ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; k              ; 16    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg6 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; k              ; 16    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R5 ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; k              ; 16    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg5 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; k              ; 16    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R4 ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; k              ; 16    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg4 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; k              ; 16    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R3 ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; k              ; 16    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg3 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; k              ; 16    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R2 ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; k              ; 16    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg2 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; k              ; 16    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R1 ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; k              ; 16    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg1 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; k              ; 16    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:R0 ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; k              ; 16    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg0 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; k              ; 16    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -469,7 +469,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -479,57 +479,57 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Nov 13 18:48:47 2021
+    Info: Processing started: Mon Nov 15 16:33:14 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab5 -c lab5_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/jadan/onedrive/desktop/cpen labs/shifter.v
-    Info (12023): Found entity 1: shifter File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/jadan/onedrive/desktop/cpen labs/regfile.v
-    Info (12023): Found entity 1: regfile File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/jadan/onedrive/desktop/cpen labs/ram.v
-    Info (12023): Found entity 1: vDFF_w_Load File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v Line: 1
-Info (12021): Found 4 design units, including 4 entities, in source file /users/jadan/onedrive/desktop/cpen labs/lab5_top.v
-    Info (12023): Found entity 1: lab5_top File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 57
-    Info (12023): Found entity 2: input_iface File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 109
-    Info (12023): Found entity 3: vDFF File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 148
-    Info (12023): Found entity 4: sseg File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 167
-Warning (12090): Entity "Dec38" obtained from "../../Desktop/CPEN Labs/Dec38.v" instead of from Quartus Prime megafunction library File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/jadan/onedrive/desktop/cpen labs/dec38.v
-    Info (12023): Found entity 1: Dec38 File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/jadan/onedrive/desktop/cpen labs/datapath.v
-    Info (12023): Found entity 1: datapath File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/jadan/onedrive/desktop/cpen labs/alu.v
-    Info (12023): Found entity 1: ALU File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/wmken/documents/github/cpen-labs/shifter.v
+    Info (12023): Found entity 1: shifter File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/shifter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/wmken/documents/github/cpen-labs/regfile.v
+    Info (12023): Found entity 1: regfile File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/regfile.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/wmken/documents/github/cpen-labs/ram.v
+    Info (12023): Found entity 1: vDFF_w_Load File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/RAM.v Line: 1
+Info (12021): Found 4 design units, including 4 entities, in source file /users/wmken/documents/github/cpen-labs/lab5_top.v
+    Info (12023): Found entity 1: lab5_top File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 57
+    Info (12023): Found entity 2: input_iface File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 109
+    Info (12023): Found entity 3: vDFF File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 148
+    Info (12023): Found entity 4: sseg File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 167
+Warning (12090): Entity "Dec38" obtained from "../Dec38.v" instead of from Quartus Prime megafunction library File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/Dec38.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/wmken/documents/github/cpen-labs/dec38.v
+    Info (12023): Found entity 1: Dec38 File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/Dec38.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/wmken/documents/github/cpen-labs/datapath.v
+    Info (12023): Found entity 1: datapath File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/datapath.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/wmken/documents/github/cpen-labs/alu.v
+    Info (12023): Found entity 1: ALU File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/alu.v Line: 1
 Info (12127): Elaborating entity "lab5_top" for the top level hierarchy
-Info (12128): Elaborating entity "input_iface" for hierarchy "input_iface:IN" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 71
-Info (12128): Elaborating entity "vDFF" for hierarchy "input_iface:IN|vDFF:DATA" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 123
-Info (12128): Elaborating entity "vDFF" for hierarchy "input_iface:IN|vDFF:CTRL" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 129
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:DP" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 97
-Info (12128): Elaborating entity "regfile" for hierarchy "datapath:DP|regfile:REGFILE" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v Line: 23
-Info (10264): Verilog HDL Case Statement information at regfile.v(29): all case item expressions in this case statement are onehot File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v Line: 29
-Info (12128): Elaborating entity "Dec38" for hierarchy "datapath:DP|regfile:REGFILE|Dec38:reg_Dec38_1" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v Line: 13
-Warning (10230): Verilog HDL assignment warning at Dec38.v(5): truncated value with size 32 to match size of target (8) File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v Line: 5
-Info (12128): Elaborating entity "vDFF_w_Load" for hierarchy "datapath:DP|regfile:REGFILE|vDFF_w_Load:R7" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v Line: 17
-Info (12128): Elaborating entity "shifter" for hierarchy "datapath:DP|shifter:U1" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v Line: 28
-Info (12128): Elaborating entity "ALU" for hierarchy "datapath:DP|ALU:U2" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v Line: 46
-Info (12128): Elaborating entity "vDFF_w_Load" for hierarchy "datapath:DP|vDFF_w_Load:status" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v Line: 48
-Info (12128): Elaborating entity "sseg" for hierarchy "sseg:H0" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 100
+Info (12128): Elaborating entity "input_iface" for hierarchy "input_iface:IN" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 71
+Info (12128): Elaborating entity "vDFF" for hierarchy "input_iface:IN|vDFF:DATA" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 123
+Info (12128): Elaborating entity "vDFF" for hierarchy "input_iface:IN|vDFF:CTRL" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 129
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:DP" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 97
+Info (12128): Elaborating entity "regfile" for hierarchy "datapath:DP|regfile:REGFILE" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/datapath.v Line: 23
+Info (10264): Verilog HDL Case Statement information at regfile.v(29): all case item expressions in this case statement are onehot File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/regfile.v Line: 29
+Info (12128): Elaborating entity "Dec38" for hierarchy "datapath:DP|regfile:REGFILE|Dec38:reg_Dec38_1" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/regfile.v Line: 13
+Warning (10230): Verilog HDL assignment warning at Dec38.v(5): truncated value with size 32 to match size of target (8) File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/Dec38.v Line: 5
+Info (12128): Elaborating entity "vDFF_w_Load" for hierarchy "datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg7" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/regfile.v Line: 17
+Info (12128): Elaborating entity "shifter" for hierarchy "datapath:DP|shifter:U1" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/datapath.v Line: 28
+Info (12128): Elaborating entity "ALU" for hierarchy "datapath:DP|ALU:U2" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/datapath.v Line: 46
+Info (12128): Elaborating entity "vDFF_w_Load" for hierarchy "datapath:DP|vDFF_w_Load:status" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/datapath.v Line: 48
+Info (12128): Elaborating entity "sseg" for hierarchy "sseg:H0" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 100
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 62
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
@@ -1106,17 +1106,17 @@ Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 58
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 58
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v Line: 58
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 58
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 58
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/wmken/Documents/GitHub/CPEN-Labs/lab5_top.v Line: 58
 Info (21057): Implemented 451 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 384 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 594 warnings
-    Info: Peak virtual memory: 4835 megabytes
-    Info: Processing ended: Sat Nov 13 18:49:01 2021
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Mon Nov 15 16:33:41 2021
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:31
 
 

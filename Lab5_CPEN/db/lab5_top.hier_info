@@ -371,7 +371,7 @@ out[6] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R7
+|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg7
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -438,7 +438,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R6
+|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg6
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -505,7 +505,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R5
+|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg5
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -572,7 +572,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R4
+|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg4
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -639,7 +639,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R3
+|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg3
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -706,7 +706,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R2
+|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg2
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -773,7 +773,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R1
+|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg1
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -840,7 +840,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:R0
+|lab5_top|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg0
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
