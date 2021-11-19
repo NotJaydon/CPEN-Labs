@@ -1,20 +1,19 @@
-module instrucreg(in, load, regout)
+module instrucreg(clk, in, load, out);
 	input [15:0] in;
-	input load;
-	output [15:0] regout;
+	input load, clk;
+	output [15:0] out;
 
-	reg [15:0] regval;
-	reg [15:0] regout;
+	reg [15:0] out;
+	reg [15:0] mux_out;
 
-always @(*) begin
-     case(load)
-	1'b1: regval = in;
-	1'b0: regval = regout;
-	default: regval = {16{1'b0}};
-endcase
-end
+	always @* begin
+		if (load == 1'b0)
+			mux_out = out;
+		else
+			mux_out = in;
+	end
 
-always @(posedge clk) begin
-	regout = regval;
-end
+	always @(posedge clk) begin
+		out = mux_out;
+	end
 endmodule

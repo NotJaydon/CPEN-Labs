@@ -31,3 +31,18 @@ and writing verilog you would still need to make sure the output
 logic sets these signals to zero
 
 might need to implement a counter for our FSM
+
+when we transition from one state to another, we don't change the outputs
+
+we have the same numebr outputs from lab 5
+we also have status register outputs on HEX5
+when SW[9] is set to zero, the first 8 switches atarting from 0 will control
+the lower 8 bits of in and the firsrt 8 leds will show the
+upper 8 bits
+
+when sw[9] is set to 1, the first 8 switches will change the upper
+8 bits of the 16 bit input. and the leds starting from 0 to 8 
+will show the lower 8 bits of the 16 bit input
+key1 is reset
+key2 is s
+key3 is load
