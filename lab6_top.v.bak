@@ -97,8 +97,6 @@ module sseg(in,segs);
   input [3:0] in;
   output [6:0] segs;
 
-  reg [6:0] segs;
-
   // NOTE: The code for sseg below is not complete: You can use your code from
   // Lab4 to fill this in or code from someone else's Lab4.  
   //
@@ -144,26 +142,6 @@ module sseg(in,segs);
   //            14 | E
   //            15 | F
 
-  always @* begin
-	case(in)
-		0: segs = 7'b1000000;
-		1: segs = 7'b1001111;
-		2: segs = 7'b0100100;
-		3: segs = 7'b0110000;
-		4: segs = 7'b0011001;
-		5: segs = 7'b0010010;
-		6: segs = 7'b0000010;
-		7: segs = 7'b1111000;
-		8: segs = 7'b0000000;
-		9: segs = 7'b0010000;
-		10: segs = 7'b0001000;
-		11: segs = 7'b0000011;
-		12: segs = 7'b1000110;
-		13: segs = 7'b0100001;
-		14: segs = 7'b0000110;
-		15: segs = 7'b0001110;
-		default: segs = 7'b0111111;
-	endcase
-  end
+  assign segs = 7'b0001110;  // this will output "F" 
 
 endmodule
