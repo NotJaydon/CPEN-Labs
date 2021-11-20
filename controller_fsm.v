@@ -9,7 +9,7 @@ output [2:0] nsel;
 
 `define wait_ 4'b0000
 `define decode 4'b0001
-`define geta 4'b1000 //you can change the state names to anything you want. wk 
+`define geta 4'b1000 
 `define getb 4'b1001
 `define arithmetic 4'b1010
 `define writereg 4'b1110
@@ -21,9 +21,10 @@ output [2:0] nsel;
 wire [3:0] present_state, state_next_reset, state_next;
 reg [18:0] next;
 
-vDFF #(4) STATE(.clk(clk), .in(state_next_reset), .out(present_state));
+vDFF #(4) STATE(.clk(clk), .in(state_next_reset), .out(present_state)); //simple flipflop module to change 
+									//states on risedge of clock
 
-assign state_next_reset = reset ? `wait_ : state_next;
+assign state_next_reset = reset ? `wait_ : state_next; //checks to see if reset is high (in which case we go back to beginning)
 
 //vsel - will not do anything if write is 0
 //nsel - will not do anything if write is 0 and also if load a and load b are zero
@@ -35,8 +36,9 @@ assign state_next_reset = reset ? `wait_ : state_next;
 //loads - for now we think that we only set this in the compare state
 //w - needs to be 1 or 0 and is local to this current module
 
-always @* begin	//state, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, w
-   casex({present_state, op, opcode, s})
+always @* begin	//continuously updates present state and outputs based on the past state and inputs
+		//state, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, w
+   casex({present_state, op, opcode, s}) //checking state and inputs
 	{`wait_, 2'bxx, 3'bxxx, 1'b1}: next = {`decode, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
 	{`wait_, 2'bxx, 3'bxxx, 1'b0}: next = {`decode, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b1};
 	{`decode, 2'bxx, 3'b101, 1'bx}: next = {`geta, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
