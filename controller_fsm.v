@@ -55,7 +55,8 @@ always @* begin	//continuously updates present state and outputs based on the pa
 	{`movreguno, 2'bxx, 3'bxxx, 1'bx}: next = {`movregdos, 4'bxxxx, 3'b001, 1'b0, 1'b1, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
 	{`movregdos, 2'bxx, 3'bxxx, 1'bx}: next = {`movregtres, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0};
 	{`movregtres, 2'bxx, 3'bxxx, 1'bx}: next = {`wait_, 4'b0001, 3'b010, 1'b1, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
-	endcase
+	default: next = {19{1'bx}};
+    endcase
 end
 endmodule
 		

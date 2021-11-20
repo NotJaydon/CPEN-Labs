@@ -96,12 +96,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	vDFF_w_Load
 
-} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/instrucDec.v} {0 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/instrucDec.v}
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/instrucDec.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/instrucDec.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module instrucDec
-** Error: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/instrucDec.v(32): (vlog-2730) Undefined variable: 'reg_out'.
 
-} {4.0 5.0} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v}
+Top level modules:
+	instrucDec
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module shifter
 
