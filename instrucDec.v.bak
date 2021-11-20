@@ -1,15 +1,15 @@
-module instrucDec(in, opcode, op, nsel, reg_out, shift, sximm8, sximm5, ALUop);
+module instrucDec(in, opcode, op, nsel, writenum, readnum, shift, sximm8, sximm5, ALUop);
 	input [15:0] in;
 	output [2:0] opcode;
 	input [2:0] nsel;
 	output [1:0] op, shift, ALUop;
-	output [2:0] reg_out;
+	output [2:0] writenum, readnum;
 	output [15:0] sximm8, sximm5;
 
 	reg [4:0] imm5;
 	reg [7:0] imm8;
 	reg [1:0] ALUop, shift, op;
-	reg [2:0] reg_out, opcode, Rn, Rd, Rm;
+	reg [2:0] writenum, readnum, opcode, Rn, Rd, Rm;
 	reg [15:0] sximm5, sximm8;
 
 	always @* begin
@@ -26,10 +26,10 @@ module instrucDec(in, opcode, op, nsel, reg_out, shift, sximm8, sximm5, ALUop);
 
 	always @* begin
 		case(nsel)
-			3'b100: reg_out = Rn;
-			3'b010: reg_out = Rd;
-			3'b001: reg_out = Rm;
-			default: reg_out = 3'bxxx;
+			3'b100: begin writenum = Rn; readnum = Rn; end 
+			3'b010: begin writenum = Rd; readnum = Rd; end
+			3'b001: begin writenum = Rm; readnum = Rm; end
+			default: writenum = 3'bxxx; readnum = 3'bxxx;
 		endcase
 	end
 
