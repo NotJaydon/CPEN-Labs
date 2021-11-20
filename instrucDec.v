@@ -12,7 +12,7 @@ module instrucDec(in, opcode, op, nsel, writenum, readnum, shift, sximm8, sximm5
 	reg [2:0] writenum, readnum, opcode, Rn, Rd, Rm;
 	reg [15:0] sximm5, sximm8;
 
-	always @* begin
+	always @* begin		//we are dissecting the in bit field into the various external module inputs
 		opcode = in[15:13];
 		op = in[12:11];
 		Rm = in[2:0];
@@ -24,7 +24,7 @@ module instrucDec(in, opcode, op, nsel, writenum, readnum, shift, sximm8, sximm5
 		ALUop = in[12:11];
 	end
 
-	always @* begin
+	always @* begin		//we are selecting the register to either read or write based on the inputs Rn, Rd, Rm
 		case(nsel)
 			3'b100: begin writenum = Rn; readnum = Rn; end 
 			3'b010: begin writenum = Rd; readnum = Rd; end
@@ -33,7 +33,7 @@ module instrucDec(in, opcode, op, nsel, writenum, readnum, shift, sximm8, sximm5
 		endcase
 	end
 
-	always @* begin
+	always @* begin		//sign extending imm8 to 16 bits
 		if(imm8[7] == 1'b1) begin
 			sximm8 = {8'b11111111, imm8};	//Might work with just 8'b1 but not sure, don't care to find out
 		end
@@ -42,7 +42,7 @@ module instrucDec(in, opcode, op, nsel, writenum, readnum, shift, sximm8, sximm5
 		end
 	end
 
-	always @* begin
+	always @* begin		//sign extending imm5 to 16 bits
 		if(imm5[4] == 1'b1) begin
 			sximm5 = {11'b11111111111, imm5};
 		end

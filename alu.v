@@ -26,6 +26,9 @@ module ALU(Ain, Bin, ALUop, out, Z, N, V);
 		else 
 			N = 1'b0;
 
-		Z = 1'b0;
+		if ((Ain[14] & Bin[14]) !== (Ain[15] & Bin[15]))
+			V = 1'b1;
+		else
+			V = 1'b0;
 	end
 endmodule

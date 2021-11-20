@@ -46,3 +46,6 @@ will show the lower 8 bits of the 16 bit input
 key1 is reset
 key2 is s
 key3 is load
+
+
+one comment per always  block, assign or module instantiation

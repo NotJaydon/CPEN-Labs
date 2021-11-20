@@ -29,7 +29,7 @@ module instrucDec(in, opcode, op, nsel, writenum, readnum, shift, sximm8, sximm5
 			3'b100: begin writenum = Rn; readnum = Rn; end 
 			3'b010: begin writenum = Rd; readnum = Rd; end
 			3'b001: begin writenum = Rm; readnum = Rm; end
-			default: writenum = 3'bxxx; readnum = 3'bxxx;
+			default: begin writenum = 3'bxxx; readnum = 3'bxxx; end
 		endcase
 	end
 

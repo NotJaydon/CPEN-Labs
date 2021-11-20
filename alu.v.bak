@@ -5,7 +5,7 @@ module ALU(Ain, Bin, ALUop, out, Z, N, V);
 	output Z, V, N;
 
 	reg [15:0] out;
-	reg Z, N, V
+	reg Z, N, V;
 	
 	always @* begin		//whenever the ALU operation input changes, the output of the ALU should be updated immediately according the selected operation
 		case(ALUop)
@@ -21,7 +21,7 @@ module ALU(Ain, Bin, ALUop, out, Z, N, V);
 		else
 			Z = 1'b0;
 
-		if(out < {16{1'b0}}) 
+		if(out[15] == 1'b1)
 			N = 1'b1;
 		else 
 			N = 1'b0;
