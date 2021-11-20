@@ -1,5 +1,5 @@
-module controller_fsm(s, reset, opcode, w, nsel, vsel, write, loada, loadb, asel, bsel, loadc, loads)
-input s, reset;
+module controller_fsm(clk, s, reset, opcode, op, w, nsel, vsel, write, loada, loadb, asel, bsel, loadc, loads);
+input s, reset, clk;
 input [1:0] op;
 input [2:0] opcode;
 
@@ -7,113 +7,53 @@ output w, write, loada, loadb, asel, bsel, loadc, loads;
 output [3:0] vsel;
 output [2:0] nsel;
 
-`define waitt 4'b0000
+`define wait_ 4'b0000
 `define decode 4'b0001
 `define geta 4'b1000 //you can change the state names to anything you want. wk 
 `define getb 4'b1001
-`define add 4'b1010
-`define cmp 4'b1011
-`define andd 4'b1100
-`define nott 4'b1101
+`define arithmetic 4'b1010
 `define writereg 4'b1110
-`define movim 4'b0100
-`defife movrg1 4'0101
-`define movrg2 4'0110
-`define movrg3 4'0111
+`define movimm 4'b0100
+`define movreguno 4'b0101
+`define movregdos 4'b0110
+`define movregtres 4'b0111
 
-always @(posedge clk) begin
+wire [3:0] present_state, state_next_reset, state_next;
+reg [18:0] next;
 
-if(reset) begin
-	present = `waitt;
-end
+vDFF #(4) STATE(.clk(clk), .in(state_next_reset), .out(present_state));
 
-else begin
-   case(present) begin
+assign state_next_reset = reset ? `wait_ : state_next;
+
+//vsel - will not do anything if write is 0
+//nsel - will not do anything if write is 0 and also if load a and load b are zero
+//write - we need to either make this a 1 or a 0
+//loadb & loada - need to make this a one or a zero
+//asel - can be anything if loadc is zero
+//bsel - can be anything if loadc is zero
+//loadc - need to make either 1 or 0
+//loads - for now we think that we only set this in the compare state
+//w - needs to be 1 or 0 and is local to this current module
+
+always @* begin	//state, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, w
+   casex({present_state, op, opcode, s})
+	{`wait_, 2'bxx, 3'bxxx, 1'b1}: next = {`decode, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
+	{`wait_, 2'bxx, 3'bxxx, 1'b0}: next = {`decode, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b1};
+	{`decode, 2'bxx, 3'b101, 1'bx}: next = {`geta, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
+	{`decode, 2'b10, 3'b110, 1'bx}: next = {`movimm, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
+	{`decode, 2'b00, 3'b110, 1'bx}: next = {`movreguno, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
 	
-	`waitt: if(s = 1'b1) 
-		present = `decode;
-		else
-		present = `waitt;
-
-	`decode: if(opcode = 3'b110)
-			if(op = 2'b10)
-			present = `movim;
-			else if(op = 2'b00)
-			present = `movrg;
-			else 
-			present = /*not sure*/
-		else if (opcode = 3'b101)
-			present = `geta;
-		else 
-		present = /* not sure*/
-
-	`movim: present = `waitt;
-
-	`movrg1: present = `movrg2:
-
-	`movrg2: present = `movrg3;
-
-	`movrg3: present = `waitt;
-
-
-endcase
-end
-end
-
-always @(*) begin
-   case(present) begin
-
-	`waitt: 
-
-	`decode:
-
-	`movim:  vsel = 4'b0100;
-		 nsel = 3'b100;
-		 write = 1'b1;
-		 loadb = 1'bx;
-		 loada = 1'bx;
-		 asel = 1'bx;
-		 bsel = 1'bx;
-		 loadc = 1'bx;
-		 loads = 1'bx;
-		 w = 1'b0;
-
-
-	`movrg1: vsel = 4'bxxx;
-		 nsel = 3'bxxx;
-		 write = 1'b0;
-		 loadb = 1'b1;
-		 loada = 1'b0;
-		 asel = 1'b0;
-		 bsel = 1'b0;
-		 loadc = 1'b0;
-		 loads = 1'b0;
-		 w = 1'b0;
-
-	`movrg2: vsel = 4'bxxx;
-		 nsel = 3'bxxx;
-		 write = 1'b0;
-		 loadb = 1'b0;
-		 loada = 1'b0;
-		 asel = 1'b1;
-		 bsel = 1'b0;
-		 loadc = 1'b1;
-		 loads = 1'b0;
-		 w = 1'b0;
-
-	`movrg3: vsel = 4'b0001;
-		 nsel = 3'010;
-		 write = 1'b1;
-		 loadb = 1'bx;
-		 loada = 1'bx;
-		 asel = 1'bx;
-		 bsel = 1'bx;
-		 loadc = 1'b1;
-		 loads = 1'b0;
-		 w = 1'b0;
-		 
-
-endcase
+	{`geta, 2'bxx, 3'bxxx, 1'bx}: next = {`getb, 4'bxxxx, 3'b100, 1'b0, 1'b0, 1'b1, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
+	{`getb, 2'bxx, 3'bxxx, 1'bx}: next = {`arithmetic, 4'bxxxx, 3'b001, 1'b0, 1'b1, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
+	{`arithmetic, 2'bxx, 3'bxxx, 1'bx}: next = {`writereg, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0};
+	{`writereg, 2'bxx, 3'bxxx, 1'bx}: next = {`wait_, 4'b0001, 3'b101, 1'b1, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
+	
+	{`movimm, 2'bxx, 3'bxxx, 1'bx}: next = {`wait_, 4'b0100, 3'b100, 1'b1, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
+	
+	{`movreguno, 2'bxx, 3'bxxx, 1'bx}: next = {`movregdos, 4'bxxxx, 3'b001, 1'b0, 1'b1, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
+	{`movregdos, 2'bxx, 3'bxxx, 1'bx}: next = {`movregtres, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0};
+	{`movregtres, 2'bxx, 3'bxxx, 1'bx}: next = {`wait_, 4'b0001, 3'b010, 1'b1, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
+	endcase
 end
 endmodule
 		
