@@ -4,9 +4,11 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w)
 	output [15:0] load;
 	output N, V, Z, w;
 
+	wire [3:0] vsel;
 	wire[15:0] instruc, sximm8, sximm5;
-	wire [2:0] opcode, writenum, readnum;
+	wire [2:0] opcode, writenum, readnum, nsel;
 	wire [1:0] op, shift, ALUop;
+	wire write, loadb, loada, asel, bsel, loadc, loads;
 
 instrucreg instrucreg_1 (.in(in), .out(instruc));
 
