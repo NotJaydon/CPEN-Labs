@@ -19,7 +19,7 @@ instrucDec instrucDec_1 (.in(instruc), .opcode(opcode), .op(op), .nsel(nsel),		/
 datapath datapath_1(.clk(clk), .readnum(readnum), .vsel(vsel), .loada(loada), .loadb(loadb),		//from previous lab, is responsible for computation and storage
 		    .shift(shift), .asel(asel), .bsel(bsel), .ALUop(ALUop), .loadc(loadc),
 		    .loads(loads), .writenum(writenum), .write(write), .sximm8(sximm8),
-		    .sximm5(sximm5), .Z_out(Z), .N_out(N), .V_out(V), .datapath_out(out),
+		    .sximm5(sximm5), .Z_out({N, V, Z}), .datapath_out(out),
 		    .mdata({16{1'b0}}), .PC({8{1'b0}}));
 
 controller_fsm controller_fsm_1(.clk(clk), .s(s), .reset(reset), .opcode(opcode), .op(op), .w(w),	//provides the inputs for the datapath to function correctly

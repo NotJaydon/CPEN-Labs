@@ -104,7 +104,7 @@ module sseg(in,segs);
   //
   // IMPORTANT:  If you *do* use someone else's Lab4 code for the seven
   // segment display you *need* to state the following three things in
-  // a file README.txt that you submit with handin along with this code: 
+  // a file README.txt that you submit with handin along with this code:
   //
   //   1.  First and last name of student providing code
   //   2.  Student number of student providing code

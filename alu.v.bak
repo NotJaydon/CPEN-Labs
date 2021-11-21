@@ -21,11 +21,14 @@ module ALU(Ain, Bin, ALUop, out, Z, N, V);
 		else
 			Z = 1'b0;
 
-		if(out[15] == 1'b1)
+		if(out[15] == 1'b1)	//we are using signed numbers so if the MSB is a one, then the number is a negative number
 			N = 1'b1;
 		else 
 			N = 1'b0;
 
-		Z = 1'b0;
+		if ((Ain[14] & Bin[14]) !== (Ain[15] & Bin[15]))	//if carry in is not equal to carry out for the most significant bit, then there is overflow
+			V = 1'b1;
+		else
+			V = 1'b0;
 	end
 endmodule

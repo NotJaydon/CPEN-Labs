@@ -40,7 +40,7 @@ always @* begin	//continuously updates present state and outputs based on the pa
 		//state, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, w
    casex({present_state, op, opcode, s}) //checking state and inputs
 	{`wait_, 2'bxx, 3'bxxx, 1'b1}: next = {`decode, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
-	{`wait_, 2'bxx, 3'bxxx, 1'b0}: next = {`decode, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b1};
+	{`wait_, 2'bxx, 3'bxxx, 1'b0}: next = {`wait_, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b1};
 	{`decode, 2'bxx, 3'b101, 1'bx}: next = {`geta, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
 	{`decode, 2'b10, 3'b110, 1'bx}: next = {`movimm, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
 	{`decode, 2'b00, 3'b110, 1'bx}: next = {`movreguno, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
@@ -58,5 +58,8 @@ always @* begin	//continuously updates present state and outputs based on the pa
 	default: next = {19{1'bx}};
     endcase
 end
+
+assign {state_next, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, w} = next;
+
 endmodule
 		

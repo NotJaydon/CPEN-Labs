@@ -1,5 +1,5 @@
 module datapath(clk, readnum, vsel, loada, loadb, shift, asel, bsel, ALUop, loadc,
-		loads, writenum, write, sximm8, sximm5, Z_out, datapath_out, mdata, PC);
+		loads, writenum, write, sximm8, sximm5, Z_out, N_out, V_out, datapath_out, mdata, PC);
 	input [15:0] sximm8, mdata, sximm5;
 	input [7:0] PC;
 	input [3:0] vsel;
@@ -7,11 +7,11 @@ module datapath(clk, readnum, vsel, loada, loadb, shift, asel, bsel, ALUop, load
 	input [2:0] readnum, writenum;
 	input [1:0] ALUop, shift;
 	output [15:0] datapath_out;
-	output Z_out;
+	output Z_out, V_out, N_out;
 
 	wire [15:0] data_out, A_out, B_out, sout, out;
 	reg [15:0] data_in, Ain, Bin;
-	wire Z;
+	wire Z, N, V;
 
 	always @* begin		//implementation of the mux to select the input for the register file to either be data out or external data in
 		case (vsel)
@@ -47,8 +47,8 @@ module datapath(clk, readnum, vsel, loada, loadb, shift, asel, bsel, ALUop, load
 		endcase
 	end
 
-	ALU U2(.Ain(Ain), .Bin(Bin), .ALUop(ALUop), .out(out), .Z(Z));				//instantiation of the ALU needed for arithmetic operations
-	vDFF_w_Load #(16) C(.clock(clk), .set(loadc), .din(out), .dout(datapath_out));		//instantiation of the C register
-	vDFF_w_Load #(1) status(.clock(clk), .set(loads), .din(Z), .dout(Z_out));		//instantiation of the status register
+	ALU U2(.Ain(Ain), .Bin(Bin), .ALUop(ALUop), .out(out), .Z(Z_out), .N(N_out), .V(V_out));	//instantiation of the ALU needed for arithmetic operations
+	vDFF_w_Load #(16) C(.clock(clk), .set(loadc), .din(out), .dout(datapath_out));			//instantiation of the C register
+	vDFF_w_Load #(3) status(.clock(clk), .set(loads), .din(sout), .dout({N_out, V_out, Z_out}));
 endmodule
 	

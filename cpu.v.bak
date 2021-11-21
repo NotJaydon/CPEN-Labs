@@ -10,7 +10,7 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
 	wire [1:0] op, shift, ALUop;
 	wire write, loadb, loada, asel, bsel, loadc, loads;
 
-instrucreg instrucreg_1 (.clk(clk), .in(in), .load(load) .out(instruc));	//Instantiating our instruction register which will store our input instructions
+instrucreg instrucreg_1 (.clk(clk), .in(in), .load(load), .out(instruc));	//Instantiating our instruction register which will store our input instructions
 
 instrucDec instrucDec_1 (.in(instruc), .opcode(opcode), .op(op), .nsel(nsel),		//Instantiating our instruction decoder which will take our instruction bit field and dissect them into their respective external module inputs
 .writenum(writenum), .readnum(readnum), .shift(shift), .sximm8(sximm8),

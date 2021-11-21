@@ -1,15 +1,7 @@
-{C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module datapath
-
-Top level modules:
-	datapath
-
-} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_top.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_top.v}
+{C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_top.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_top.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module lab6_top
 -- Compiling module input_iface
--- Compiling module vDFF
 -- Compiling module sseg
 
 Top level modules:
@@ -28,13 +20,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	controller_fsm
-
-} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ALU
-
-Top level modules:
-	ALU
 
 } {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter_tb.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter_tb.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -98,12 +83,36 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	vDFF_w_Load
 
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/instrucDec.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/instrucDec.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module instrucDec
+
+Top level modules:
+	instrucDec
+
 } {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module shifter
 
 Top level modules:
 	shifter
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab5_top
+-- Compiling module input_iface
+-- Compiling module vDFF
+-- Compiling module sseg
+
+Top level modules:
+	lab5_top
+
+} {} {}} E://lab5_top_tb.sv {1 {vlog -work work -sv -stats=none E:/lab5_top_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab5_top_tb
+
+Top level modules:
+	lab5_top_tb
 
 } {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/vDFF.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/vDFF.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -118,22 +127,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	instrucreg
-
-} {} {}} E://lab5_top_tb.sv {1 {vlog -work work -sv -stats=none E:/lab5_top_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module lab5_top_tb
-
-Top level modules:
-	lab5_top_tb
-
-} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module lab5_top
--- Compiling module input_iface
--- Compiling module vDFF
--- Compiling module sseg
-
-Top level modules:
-	lab5_top
 
 } {} {}}

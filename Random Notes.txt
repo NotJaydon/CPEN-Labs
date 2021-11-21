@@ -49,3 +49,10 @@ key3 is load
 
 
 one comment per always  block, assign or module instantiation
+
+we have to add the ALUopcodes to alu and do the code for it 
+(i think we might have implicitly done compare because we just have 
+to subtract the two operands and use the status out Z bit
+to see if the two operands are equal, but we still have to implement
+that)
+we have to fix the alu status reg out in datapath mod
