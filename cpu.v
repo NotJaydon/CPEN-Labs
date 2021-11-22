@@ -16,7 +16,7 @@ instrucDec instrucDec_1 (.in(instruc), .opcode(opcode), .op(op), .nsel(nsel),		/
 .writenum(writenum), .readnum(readnum), .shift(shift), .sximm8(sximm8),
 .sximm5(sximm5), .ALUop(ALUop));
 
-datapath datapath_1(.clk(clk), .readnum(readnum), .vsel(vsel), .loada(loada), .loadb(loadb),		//from previous lab, is responsible for computation and storage
+datapath DP(.clk(clk), .readnum(readnum), .vsel(vsel), .loada(loada), .loadb(loadb),		//from previous lab, is responsible for computation and storage
 		    .shift(shift), .asel(asel), .bsel(bsel), .ALUop(ALUop), .loadc(loadc),
 		    .loads(loads), .writenum(writenum), .write(write), .sximm8(sximm8),
 		    .sximm5(sximm5), .Z_out({N, V, Z}), .datapath_out(out),
