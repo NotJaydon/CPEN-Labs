@@ -26,7 +26,7 @@ module ALU(Ain, Bin, ALUop, out, Z);
 		else 
 			Z[2] = 1'b0;
 
-		if ((Ain[7] & Bin[7]) !== (Ain[8] & Bin[8]))	//if carry in is not equal to carry out for the most significant bit, then there is overflow
+		if ((Ain[6] & Bin[6]) !== (Ain[7] & Bin[7]))	//if carry in is not equal to carry out for the most significant bit, then there is overflow
 			Z[1] = 1'b1;
 		else
 			Z[1] = 1'b0;
