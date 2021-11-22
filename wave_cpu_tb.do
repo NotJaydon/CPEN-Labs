@@ -11,16 +11,16 @@ add wave -noupdate /cpu_tb/sim_s
 add wave -noupdate /cpu_tb/sim_load
 add wave -noupdate /cpu_tb/sim_in
 add wave -noupdate /cpu_tb/err
-add wave -noupdate /cpu_tb/TB/datapath_1/REGFILE/R0
-add wave -noupdate /cpu_tb/TB/datapath_1/REGFILE/R1
-add wave -noupdate /cpu_tb/TB/datapath_1/REGFILE/R2
-add wave -noupdate /cpu_tb/TB/datapath_1/REGFILE/R3
-add wave -noupdate /cpu_tb/TB/datapath_1/REGFILE/R4
-add wave -noupdate /cpu_tb/TB/datapath_1/REGFILE/R5
-add wave -noupdate /cpu_tb/TB/datapath_1/REGFILE/R6
-add wave -noupdate /cpu_tb/TB/datapath_1/REGFILE/R7
+add wave -noupdate /cpu_tb/TB/DP/REGFILE/R0
+add wave -noupdate /cpu_tb/TB/DP/REGFILE/R1
+add wave -noupdate /cpu_tb/TB/DP/REGFILE/R2
+add wave -noupdate /cpu_tb/TB/DP/REGFILE/R3
+add wave -noupdate /cpu_tb/TB/DP/REGFILE/R4
+add wave -noupdate /cpu_tb/TB/DP/REGFILE/R5
+add wave -noupdate /cpu_tb/TB/DP/REGFILE/R6
+add wave -noupdate /cpu_tb/TB/DP/REGFILE/R7
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {157 ps} 0}
+WaveRestoreCursors {{Cursor 1} {10 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
