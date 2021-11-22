@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cpu
-Fri Nov 19 23:05:21 2021
+Sun Nov 21 15:43:25 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -57,7 +57,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Nov 19 23:05:21 2021       ;
+; Analysis & Synthesis Status     ; Successful - Sun Nov 21 15:43:25 2021       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; cpu                                         ;
 ; Top-level Entity Name           ; cpu                                         ;
@@ -177,7 +177,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -186,6 +186,7 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                               ; Library ;
 +----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; controller_fsm.v                 ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v ;         ;
 ; vDFF.v                           ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/vDFF.v           ;         ;
 ; shifter.v                        ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/shifter.v        ;         ;
 ; regfile.v                        ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/regfile.v        ;         ;
@@ -195,7 +196,6 @@ refer to the applicable agreement for further details.
 ; Dec38.v                          ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v          ;         ;
 ; datapath.v                       ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v       ;         ;
 ; cpu.v                            ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/cpu.v            ;         ;
-; controller_fsm.v                 ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v ;         ;
 ; alu.v                            ; yes             ; User Verilog HDL File  ; C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v            ;         ;
 +----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
 
@@ -456,7 +456,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -466,10 +466,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Nov 19 23:05:07 2021
+    Info: Processing started: Sun Nov 21 15:43:01 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab6 -c cpu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file controller_fsm.v
+    Info (12023): Found entity 1: controller_fsm File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vdff.v
     Info (12023): Found entity 1: vDFF File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/vDFF.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file shifter.v
@@ -493,8 +495,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file datapat
     Info (12023): Found entity 1: datapath File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/datapath.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file cpu.v
     Info (12023): Found entity 1: cpu File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/cpu.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file controller_fsm.v
-    Info (12023): Found entity 1: controller_fsm File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: ALU File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v Line: 1
 Info (12127): Elaborating entity "cpu" for the top level hierarchy
@@ -521,9 +521,9 @@ Info (21057): Implemented 414 device resources after synthesis - the final resou
     Info (21059): Implemented 20 output pins
     Info (21061): Implemented 374 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4832 megabytes
-    Info: Processing ended: Fri Nov 19 23:05:21 2021
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Peak virtual memory: 4829 megabytes
+    Info: Processing ended: Sun Nov 21 15:43:25 2021
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:30
 
 
