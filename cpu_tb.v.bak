@@ -94,9 +94,6 @@ if(sim_w != 1'b1) begin //w should be set to 1
 	$display("Error: w should be 1");
 end
 
-sim_in = 16'b1101000100000010;
-sim_s = 1'b1;
-#12;
 
 $display("%b", cpu_tb.TB.DP.REGFILE.R1);
 #4;

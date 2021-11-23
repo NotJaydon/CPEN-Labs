@@ -1,7 +1,10 @@
-CONTRIBUTIONS
+CONTRIBUTIONS for lab 6
 
 
-Both partners contributed equally to this lab. We worked on the code
-together through the use of GitHub.
+Both partners contributed equally to this lab. We worked on the fsm code
+together in person, and the rest through github. The testbench was primarily
+written by Will.
+
+All of the code was our own from lab 5.
 
 :)

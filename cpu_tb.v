@@ -11,12 +11,12 @@ cpu TB(.clk(sim_clk), .reset(sim_reset), .s(sim_s), .load(sim_load),
 	.w(sim_w));
 
 initial begin
-sim_clk = 1'b1;
+sim_clk = 1'b0;
 forever begin   //we are running the clock cycles in the background of the test suite
 #2;		//the clock cycles last 2 ps so it takes 4 ps for a risedge to come along
-sim_clk = 1'b0;
-#2;
 sim_clk = 1'b1;
+#2;
+sim_clk = 1'b0;
 end
 end
 
@@ -94,11 +94,7 @@ if(sim_w != 1'b1) begin //w should be set to 1
 	$display("Error: w should be 1");
 end
 
-sim_in = 16'b1101000100000010;
-sim_s = 1'b1;
-#12;
 
-$display("%b", cpu_tb.TB.DP.REGFILE.R1);
 #4;
 if(err == 1'b0)
 	$display("No Errors :)");
