@@ -1716,7 +1716,7 @@ loadb <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
 asel <= WideNor14.DB_MAX_OUTPUT_PORT_TYPE
 bsel <= <GND>
 loadc <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
-loads <= WideNor16.DB_MAX_OUTPUT_PORT_TYPE
+loads <= next.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |lab6_top|cpu:U|controller_fsm:controller_fsm_1|vDFF:STATE

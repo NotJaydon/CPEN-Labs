@@ -51,7 +51,7 @@ always @* begin	//continuously updates present state and outputs based on the pa
 	{`getb, 2'b10, 3'bxxx, 1'bx}: next <= {`arithmetic, 4'bxxxx, 3'b001, 1'b0, 1'b1, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
 	{`getb, 2'b11, 3'bxxx, 1'bx}: next <= {`arithmetic, 4'bxxxx, 3'b001, 1'b0, 1'b1, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
 	{`getb, 2'b01, 3'bxxx, 1'bx}: next <= {`compare, 4'bxxxx, 3'b001, 1'b0, 1'b1, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
-	{`arithmetic, 2'bxx, 3'bxxx, 1'bx}: next <= {`writereg, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0};
+	{`arithmetic, 2'bxx, 3'bxxx, 1'bx}: next <= {`writereg, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0};
 	{`writereg, 2'bxx, 3'bxxx, 1'bx}: next <= {`wait_, 4'b0001, 3'b010, 1'b1, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
 	
 	{`movimm, 2'bxx, 3'bxxx, 1'bx}: next <= {`wait_, 4'b0100, 3'b100, 1'b1, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0};
