@@ -9,7 +9,7 @@ z2
 cModel Technology
 dE:/intelFPGA_lite/18.1
 vALU
-Z0 !s110 1637632380
+Z0 !s110 1637640238
 !i10b 1
 !s100 E2k<^VN:9]lPMGoS^?c>>0
 Iic:UBnDDYDID@c`gz=8dR3
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1637632380.000000
+Z4 !s108 1637640238.000000
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v|
 !i113 1
@@ -31,7 +31,7 @@ Z5 o-work work
 Z6 tCvgOpt 0
 n@a@l@u
 vALU_tb
-Z7 !s110 1637632381
+Z7 !s110 1637640239
 !i10b 1
 !s100 FJeX<[18K8<QT_zf3C8hO0
 I4UzG5PP7_Nj4aFna0NFG^0
@@ -45,7 +45,7 @@ R3
 r1
 !s85 0
 31
-Z9 !s108 1637632381.000000
+Z9 !s108 1637640239.000000
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu_tb.v|
 !i113 1
@@ -53,13 +53,13 @@ R5
 R6
 n@a@l@u_tb
 vcontroller_fsm
-Z10 !s110 1637632382
+Z10 !s110 1637640240
 !i10b 1
 !s100 S`Xdn^>^Q[bMTbDFJ:MNe3
 I@ALGfd7g5LiLgo4o>^6IZ2
 R1
 R2
-w1637632345
+w1637640229
 8C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v
 FC:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v
 L0 1
@@ -67,7 +67,7 @@ R3
 r1
 !s85 0
 31
-Z11 !s108 1637632382.000000
+Z11 !s108 1637640240.000000
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v|
 !i113 1
@@ -173,7 +173,7 @@ R3
 r1
 !s85 0
 31
-R11
+R9
 Z15 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_top.v|
 Z16 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_top.v|
 !i113 1
@@ -307,7 +307,7 @@ R21
 R5
 R6
 vlab5_top
-R0
+R7
 !i10b 1
 !s100 AIV0M5ZV1AhcPcf@?HTFj3
 I4RBL16naJa3dz;<65HS]U3
@@ -321,7 +321,7 @@ R3
 r1
 !s85 0
 31
-R4
+R9
 !s107 C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab5_top.v|
 !i113 1
@@ -352,7 +352,7 @@ R9
 o-work work -sv
 R6
 vlab6_check
-R10
+R7
 !i10b 1
 !s100 R]O^GWCndlF_MMIaJ:<WJ2
 IZd;92L7h1nT]zI^bcjaIn0
@@ -387,7 +387,7 @@ R3
 r1
 !s85 0
 31
-R11
+R9
 R15
 R16
 !i113 1
@@ -492,7 +492,7 @@ R3
 r1
 !s85 0
 31
-R11
+R9
 R15
 R16
 !i113 1
