@@ -21,13 +21,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ALU_tb
 
-} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module controller_fsm
-
-Top level modules:
-	controller_fsm
-
 } {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ALU
@@ -97,7 +90,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	vDFF_w_Load
 
-} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/cpu.v} {1 {vlog -work work -stats=none {C:\Users\jadan\OneDrive\Desktop\CPEN Labs\cpu.v}
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/cpu.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/cpu.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module cpu
 

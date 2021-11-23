@@ -209,25 +209,25 @@ in[12] => in[12].IN1
 in[13] => in[13].IN1
 in[14] => in[14].IN1
 in[15] => in[15].IN1
-out[0] <= datapath:datapath_1.datapath_out
-out[1] <= datapath:datapath_1.datapath_out
-out[2] <= datapath:datapath_1.datapath_out
-out[3] <= datapath:datapath_1.datapath_out
-out[4] <= datapath:datapath_1.datapath_out
-out[5] <= datapath:datapath_1.datapath_out
-out[6] <= datapath:datapath_1.datapath_out
-out[7] <= datapath:datapath_1.datapath_out
-out[8] <= datapath:datapath_1.datapath_out
-out[9] <= datapath:datapath_1.datapath_out
-out[10] <= datapath:datapath_1.datapath_out
-out[11] <= datapath:datapath_1.datapath_out
-out[12] <= datapath:datapath_1.datapath_out
-out[13] <= datapath:datapath_1.datapath_out
-out[14] <= datapath:datapath_1.datapath_out
-out[15] <= datapath:datapath_1.datapath_out
-N <= datapath:datapath_1.Z_out
-V <= datapath:datapath_1.Z_out
-Z <= datapath:datapath_1.Z_out
+out[0] <= datapath:DP.datapath_out
+out[1] <= datapath:DP.datapath_out
+out[2] <= datapath:DP.datapath_out
+out[3] <= datapath:DP.datapath_out
+out[4] <= datapath:DP.datapath_out
+out[5] <= datapath:DP.datapath_out
+out[6] <= datapath:DP.datapath_out
+out[7] <= datapath:DP.datapath_out
+out[8] <= datapath:DP.datapath_out
+out[9] <= datapath:DP.datapath_out
+out[10] <= datapath:DP.datapath_out
+out[11] <= datapath:DP.datapath_out
+out[12] <= datapath:DP.datapath_out
+out[13] <= datapath:DP.datapath_out
+out[14] <= datapath:DP.datapath_out
+out[15] <= datapath:DP.datapath_out
+N <= datapath:DP.Z_out
+V <= datapath:DP.Z_out
+Z <= datapath:DP.Z_out
 w <= controller_fsm:controller_fsm_1.w
 
 
@@ -420,7 +420,7 @@ ALUop[0] <= in[11].DB_MAX_OUTPUT_PORT_TYPE
 ALUop[1] <= in[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1
+|lab6_top|cpu:U|datapath:DP
 clk => clk.IN5
 readnum[0] => readnum[0].IN1
 readnum[1] => readnum[1].IN1
@@ -565,7 +565,7 @@ PC[6] => Mux9.IN6
 PC[7] => Mux8.IN6
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE
 data_in[0] => data_in[0].IN8
 data_in[1] => data_in[1].IN8
 data_in[2] => data_in[2].IN8
@@ -615,7 +615,7 @@ data_out[14] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
 data_out[15] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|Dec38:reg_Dec38_1
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|Dec38:reg_Dec38_1
 in[0] => ShiftLeft0.IN35
 in[1] => ShiftLeft0.IN34
 in[2] => ShiftLeft0.IN33
@@ -629,7 +629,7 @@ out[6] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|vDFF_w_Load:Reg7
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg7
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -696,7 +696,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|vDFF_w_Load:Reg6
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg6
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -763,7 +763,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|vDFF_w_Load:Reg5
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg5
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -830,7 +830,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|vDFF_w_Load:Reg4
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg4
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -897,7 +897,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|vDFF_w_Load:Reg3
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg3
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -964,7 +964,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|vDFF_w_Load:Reg2
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg2
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -1031,7 +1031,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|vDFF_w_Load:Reg1
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg1
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -1098,7 +1098,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|vDFF_w_Load:Reg0
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|vDFF_w_Load:Reg0
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -1165,7 +1165,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|regfile:REGFILE|Dec38:reg_Dec38_2
+|lab6_top|cpu:U|datapath:DP|regfile:REGFILE|Dec38:reg_Dec38_2
 in[0] => ShiftLeft0.IN35
 in[1] => ShiftLeft0.IN34
 in[2] => ShiftLeft0.IN33
@@ -1179,7 +1179,7 @@ out[6] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|vDFF_w_Load:A
+|lab6_top|cpu:U|datapath:DP|vDFF_w_Load:A
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -1246,7 +1246,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|vDFF_w_Load:B
+|lab6_top|cpu:U|datapath:DP|vDFF_w_Load:B
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -1313,7 +1313,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|shifter:U1
+|lab6_top|cpu:U|datapath:DP|shifter:U1
 in[0] => Mux14.IN3
 in[0] => Mux15.IN3
 in[1] => Mux13.IN3
@@ -1426,7 +1426,7 @@ sout[14] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 sout[15] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|ALU:U2
+|lab6_top|cpu:U|datapath:DP|ALU:U2
 Ain[0] => Add0.IN16
 Ain[0] => Add1.IN32
 Ain[0] => out.IN0
@@ -1592,7 +1592,7 @@ Z[1] <= always0.DB_MAX_OUTPUT_PORT_TYPE
 Z[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|vDFF_w_Load:C
+|lab6_top|cpu:U|datapath:DP|vDFF_w_Load:C
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -1659,7 +1659,7 @@ dout[14] <= dout[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout[15] <= dout[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab6_top|cpu:U|datapath:datapath_1|vDFF_w_Load:status
+|lab6_top|cpu:U|datapath:DP|vDFF_w_Load:status
 clock => dout[0]~reg0.CLK
 clock => dout[1]~reg0.CLK
 clock => dout[2]~reg0.CLK
@@ -1692,23 +1692,31 @@ opcode[2] => WideNor3.IN6
 opcode[2] => WideNor4.IN6
 op[0] => WideNor3.IN7
 op[0] => WideNor4.IN7
+op[0] => WideNor6.IN4
+op[0] => WideNor7.IN4
+op[0] => WideNor8.IN4
+op[0] => WideNor9.IN4
 op[1] => WideNor4.IN8
+op[1] => WideNor6.IN5
+op[1] => WideNor9.IN5
 op[1] => WideNor3.IN8
+op[1] => WideNor7.IN5
+op[1] => WideNor8.IN5
 w <= WideNor1.DB_MAX_OUTPUT_PORT_TYPE
-nsel[0] <= next.DB_MAX_OUTPUT_PORT_TYPE
+nsel[0] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
 nsel[1] <= next.DB_MAX_OUTPUT_PORT_TYPE
 nsel[2] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
-vsel[0] <= WideNor9.DB_MAX_OUTPUT_PORT_TYPE
+vsel[0] <= WideNor12.DB_MAX_OUTPUT_PORT_TYPE
 vsel[1] <= <GND>
-vsel[2] <= WideNor9.DB_MAX_OUTPUT_PORT_TYPE
+vsel[2] <= WideNor12.DB_MAX_OUTPUT_PORT_TYPE
 vsel[3] <= <GND>
 write <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
 loada <= WideNor5.DB_MAX_OUTPUT_PORT_TYPE
-loadb <= next.DB_MAX_OUTPUT_PORT_TYPE
-asel <= WideNor11.DB_MAX_OUTPUT_PORT_TYPE
+loadb <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+asel <= WideNor14.DB_MAX_OUTPUT_PORT_TYPE
 bsel <= <GND>
-loadc <= next.DB_MAX_OUTPUT_PORT_TYPE
-loads <= WideNor7.DB_MAX_OUTPUT_PORT_TYPE
+loadc <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
+loads <= WideNor16.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |lab6_top|cpu:U|controller_fsm:controller_fsm_1|vDFF:STATE

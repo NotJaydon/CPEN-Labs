@@ -1,0 +1,2 @@
+Warning (10273): Verilog HDL warning at controller_fsm.v(63): extended using "x" or "z" File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v Line: 63
+Warning (10268): Verilog HDL information at controller_fsm.v(42): always construct contains both blocking and non-blocking assignments File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v Line: 42
