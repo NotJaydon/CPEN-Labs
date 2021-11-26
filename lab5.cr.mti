@@ -21,6 +21,27 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ALU_tb
 
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab7_top.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab7_top.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_top
+
+Top level modules:
+	lab7_top
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module controller_fsm
+
+Top level modules:
+	controller_fsm
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/memory.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RAM
+
+Top level modules:
+	RAM
+
 } {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/alu.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ALU
@@ -69,13 +90,6 @@ Top level modules:
 	lab5_check_3
 	lab5_check_4
 
-} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_autograder_check.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_autograder_check.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module lab6_check
-
-Top level modules:
-	lab6_check
-
 } {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/Dec38.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module Dec38
@@ -83,12 +97,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Dec38
 
-} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v}
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_autograder_check.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/lab6_autograder_check.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module vDFF_w_Load
+-- Compiling module lab6_check
 
 Top level modules:
-	vDFF_w_Load
+	lab6_check
 
 } {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/cpu.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/cpu.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -96,6 +110,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	cpu
+
+} {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/RAM.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module vDFF_w_Load
+
+Top level modules:
+	vDFF_w_Load
 
 } {} {}} {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/instrucDec.v} {1 {vlog -work work -stats=none {C:/Users/jadan/OneDrive/Desktop/CPEN Labs/instrucDec.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

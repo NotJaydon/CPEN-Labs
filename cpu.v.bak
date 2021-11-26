@@ -1,30 +1,68 @@
-module cpu(clk, reset, s, load, in, out, N, V, Z, w);
-	input clk, reset, s, load;
-	input [15:0] in;
-	output [15:0] out;
-	output N, V, Z, w;
+//notes - removed s because there is no more wait stage
+//removed load because we do not do manual loads anymore
+//removed in since input is not coming from switches anymore
+//left out though because we may want to experiment with the hex display at some point
+//also left N, V, Z but took out w because that was also some random wait stage thing which we dont have anymore
+//it looks like the only inputs or outputs to the cpu is the mem_cmd, mem_addr, read_data
 
+module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think out might fuck us over so be wary of that
+	
+	input [15:0] read_data;
+	input clk, reset;
+
+	output [15:0] out;	//might remove, not sure
+	output [8:0] mem_addr;
+	output [1:0] mem_cmd;
+	output N, V, Z;
+
+	wire [15:0] instruc, sximm8, sximm5;
+	wire [8:0] curr_pc, data_address_out;
 	wire [3:0] vsel;
-	wire[15:0] instruc, sximm8, sximm5;
 	wire [2:0] opcode, writenum, readnum, nsel;
 	wire [1:0] op, shift, ALUop;
-	wire write, loadb, loada, asel, bsel, loadc, loads;
+	wire write, loadb, loada, asel, bsel, loadc, loads, load_ir, load_pc, reset_pc, addr_sel;
+	wire increment_out;
 
-instrucreg instrucreg_1 (.clk(clk), .in(in), .load(load), .out(instruc));	//Instantiating our instruction register which will store our input instructions
+	reg [8:0] next_pc, mem_addr;
+	instrucreg instrucreg_1 (.clk(clk), .in(read_data), .load(load_ir), .out(instruc));	//Instantiating our instruction register which will store our input instructions
 
-instrucDec instrucDec_1 (.in(instruc), .opcode(opcode), .op(op), .nsel(nsel),		//Instantiating our instruction decoder which will take our instruction bit field and dissect them into their respective external module inputs
-.writenum(writenum), .readnum(readnum), .shift(shift), .sximm8(sximm8),
-.sximm5(sximm5), .ALUop(ALUop));
+	instrucDec instrucDec_1 (.in(instruc), .opcode(opcode), .op(op), .nsel(nsel),		//Instantiating our instruction decoder which will take our instruction bit field and dissect them into their respective external module inputs
+				 .writenum(writenum), .readnum(readnum), .shift(shift), 
+				 .sximm8(sximm8), .sximm5(sximm5), .ALUop(ALUop));
 
-datapath datapath_1(.clk(clk), .readnum(readnum), .vsel(vsel), .loada(loada), .loadb(loadb),		//from previous lab, is responsible for computation and storage
+	datapath DP(.clk(clk), .readnum(readnum), .vsel(vsel), .loada(loada), .loadb(loadb),		//from previous lab, is responsible for computation and storage
 		    .shift(shift), .asel(asel), .bsel(bsel), .ALUop(ALUop), .loadc(loadc),
 		    .loads(loads), .writenum(writenum), .write(write), .sximm8(sximm8),
 		    .sximm5(sximm5), .Z_out({N, V, Z}), .datapath_out(out),
-		    .mdata({16{1'b0}}), .PC({8{1'b0}}));
+		    .mdata(read_data), .PC({8{1'b0}}));
 
-controller_fsm controller_fsm_1(.clk(clk), .s(s), .reset(reset), .opcode(opcode), .op(op), .w(w),	//provides the inputs for the datapath to function correctly
-	       .nsel(nsel), .vsel(vsel), .write(write), .loadb(loadb), .loada(loada),
-	       .asel(asel), .bsel(bsel), .loadc(loadc), .loads(loads));
+	controller_fsm controller_fsm_1(.mem_cmd(mem_cmd), .load_pc(load_pc), .load_ir(load_ir), 
+		    			.reset_pc(reset_pc), .addr_sel(addr_sel), .reset(reset), .opcode(opcode), .op(op),
+	            			.nsel(nsel), .vsel(vsel), .wsite(write), .loadb(loadb), .loada(loada),
+	            			.asel(asel), .bsel(bsel), .loadc(loadc), .loads(loads));
+
+	vDFF_w_Load #(9) p_counter(.clock(clk), .set(load_pc), .din(next_pc), .dout(curr_pc));
+	vDFF_w_Load #(9) data_address(.clock(clk), .set(load_addr), .din(write_data[8:0]), .dout(data_address_out));
+
+	always @* begin
+		case(reset_pc)
+			1'b1: next_pc = 9'b000000000;
+			1'b0: next_pc = increment_out;
+			default: next_pc = 9'bxxxxxxxxx;
+		endcase
+	end
+
+	always @* begin
+		case(addr_sel)
+			1'b1: mem_addr = curr_pc;
+			1'b0: mem_addr = data_address_out;
+			default: mem_addr = 9'bxxxxxxxxx;
+		endcase
+	end
+
+	assign increment_out = curr_pc + 1;
+
+	
 
 endmodule
 
