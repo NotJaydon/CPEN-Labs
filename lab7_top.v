@@ -26,7 +26,7 @@ module lab7_top(KEY,SW,LEDR,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5);
 	RAM #(16,8,"data.txt")MEM(.clk(~KEY[0]), .read_address(mem_addr[7:0]), .write_address(mem_addr[7:0]), //instantiation of ram module with the file
 		.write(write), .din(write_data), .dout(dout));						//the file name specified in the parameters
 
-	always @* begin //always block that determines whether we have a valid memory address based on the eighth bit of mem_addr
+	always @* begin //always block that determines whether we have a valid memory address based on the eight bit of mem_addr
 		if (mem_addr[8] == 1'b0)
 			is_memory_address = 1'b1;
 		else
