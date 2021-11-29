@@ -34,7 +34,7 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 		    .shift(shift), .asel(asel), .bsel(bsel), .ALUop(ALUop), .loadc(loadc),
 		    .loads(loads), .writenum(writenum), .write(write), .sximm8(sximm8),
 		    .sximm5(sximm5), .Z_out({N, V, Z}), .datapath_out(out),
-		    .mdata(read_data), .PC({8{1'b0}}));
+		    .mdata(read_data), .PC(PC));
 
 	controller_fsm controller_fsm_1(.mem_cmd(mem_cmd), .load_pc(load_pc), .load_ir(load_ir), 
 		    			.reset_pc(reset_pc), .addr_sel(addr_sel), .reset(reset), .opcode(opcode), .op(op),
