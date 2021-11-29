@@ -16,7 +16,7 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 	output N, V, Z;
 
 	wire [15:0] instruc, sximm8, sximm5;
-	wire [8:0] curr_pc, data_address_out;
+	wire [8:0] PC, data_address_out;
 	wire [3:0] vsel;
 	wire [2:0] opcode, writenum, readnum, nsel;
 	wire [1:0] op, shift, ALUop;
@@ -38,11 +38,12 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 
 	controller_fsm controller_fsm_1(.mem_cmd(mem_cmd), .load_pc(load_pc), .load_ir(load_ir), 
 		    			.reset_pc(reset_pc), .addr_sel(addr_sel), .reset(reset), .opcode(opcode), .op(op),
-	            			.nsel(nsel), .vsel(vsel), .wsite(write), .loadb(loadb), .loada(loada),
-	            			.asel(asel), .bsel(bsel), .loadc(loadc), .loads(loads));
+	            			.nsel(nsel), .vsel(vsel), .write(write), .loadb(loadb), .loada(loada),
+	            			.asel(asel), .bsel(bsel), .loadc(loadc), .loads(loads),
+					.load_addr(load_addr), .clk(clk));
 
-	vDFF_w_Load #(9) p_counter(.clock(clk), .set(load_pc), .din(next_pc), .dout(curr_pc));
-	vDFF_w_Load #(9) data_address(.clock(clk), .set(load_addr), .din(write_data[8:0]), .dout(data_address_out));
+	vDFF_w_Load #(9) p_counter(.clock(clk), .set(load_pc), .din(next_pc), .dout(PC));
+	vDFF_w_Load #(9) data_address(.clock(clk), .set(load_addr), .din(out[8:0]), .dout(data_address_out));
 
 	always @* begin
 		case(reset_pc)
@@ -54,13 +55,13 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 
 	always @* begin
 		case(addr_sel)
-			1'b1: mem_addr = curr_pc;
+			1'b1: mem_addr = PC;
 			1'b0: mem_addr = data_address_out;
 			default: mem_addr = 9'bxxxxxxxxx;
 		endcase
 	end
 
-	assign increment_out = curr_pc + 1;
+	assign increment_out = PC + 1;
 
 	
 

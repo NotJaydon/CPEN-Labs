@@ -93,8 +93,20 @@ if(sim_w != 1'b1) begin //w should be set to 1
 	err = 1'b1;
 	$display("Error: w should be 1");
 end
+		// Test #10: V
+sim_in = 16'b1101011001111111; //mov r6, #255
+sim_s = 1'b1;
+#12;
 
+sim_in = 16'b1101011101111111;//mov r7, #255
+#12;
 
+sim_in = 16'b1010011111100110;// add r7, r7, r6
+#24;
+if(sim_V != 1'b1) begin //at this point V should go high as there is an overflow
+	err = 1'b1;
+	$display("Error: V should be 1");
+end
 #4;
 if(err == 1'b0)
 	$display("No Errors :)");

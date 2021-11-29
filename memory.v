@@ -12,7 +12,7 @@ module RAM(clk,read_address,write_address,write,din,dout);
 
 	reg [data_width-1:0] mem [2**addr_width-1:0];
 
-	initial $readmemb(filename, mem);
+	initial $readmemb("C:\Users\wmken\Documents\GitHub\CPEN-Labs\data.txt.txt", mem);
 
 	always @ (posedge clk) begin
     		if (write)
