@@ -17,7 +17,7 @@ module datapath(clk, readnum, vsel, loada, loadb, shift, asel, bsel, ALUop, load
 		case (vsel)
 			4'b1000: data_in = mdata;
 			4'b0100: data_in = sximm8;
-			4'b0010: data_in = {7'b00000000, PC};
+			4'b0010: data_in = {7'b0000000, PC};
 			4'b0001: data_in = datapath_out;
 			default: data_in = {16{1'bx}};
 		endcase

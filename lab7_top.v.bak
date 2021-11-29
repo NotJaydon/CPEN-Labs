@@ -59,7 +59,7 @@ module lab7_top(KEY,SW,LEDR,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5);
 		enablewrite = 1'b0;
 	end
 
-	vDFF_w_Load #(8)write_load(.clk(~KEY[0]), .set(enablewrite), .din(write_data[7:0]), .dout(LEDR[7:0]));
+	vDFF_w_Load #(8)write_load(.clock(~KEY[0]), .set(enablewrite), .din(write_data[7:0]), .dout(LEDR[7:0]));
 
 	assign enable = is_read_command & is_memory_address;
 	assign write = is_write_command & is_memory_address;
