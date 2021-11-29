@@ -5,7 +5,7 @@
 //also left N, V, Z but took out w because that was also some random wait stage thing which we dont have anymore
 //it looks like the only inputs or outputs to the cpu is the mem_cmd, mem_addr, read_data
 
-module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think out might fuck us over so be wary of that
+module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//NVZ seems not to be used in this lab
 	
 	input [15:0] read_data;
 	input clk, reset;
@@ -36,16 +36,16 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 		    .sximm5(sximm5), .Z_out({N, V, Z}), .datapath_out(out),
 		    .mdata(read_data), .PC(PC));
 
-	controller_fsm controller_fsm_1(.mem_cmd(mem_cmd), .load_pc(load_pc), .load_ir(load_ir), 
+	controller_fsm controller_fsm_1(.mem_cmd(mem_cmd), .load_pc(load_pc), .load_ir(load_ir), 	//from previous lab, is responsible for providing the outputs that control IR, PCR, ID, DP, etc.
 		    			.reset_pc(reset_pc), .addr_sel(addr_sel), .reset(reset), .opcode(opcode), .op(op),
 	            			.nsel(nsel), .vsel(vsel), .write(write), .loadb(loadb), .loada(loada),
 	            			.asel(asel), .bsel(bsel), .loadc(loadc), .loads(loads),
 					.load_addr(load_addr), .clk(clk));
 
-	vDFF_w_Load #(9) p_counter(.clock(clk), .set(load_pc), .din(next_pc), .dout(PC));
-	vDFF_w_Load #(9) data_address(.clock(clk), .set(load_addr), .din(out[8:0]), .dout(data_address_out));
+	vDFF_w_Load #(9) p_counter(.clock(clk), .set(load_pc), .din(next_pc), .dout(PC));		//need a register w load enable to store the pc
+	vDFF_w_Load #(9) data_address(.clock(clk), .set(load_addr), .din(out[8:0]), .dout(data_address_out));	//need a register w laod enable to store the address
 
-	always @* begin
+	always @* begin		//implementing the reset pc multiplexer
 		case(reset_pc)
 			1'b1: next_pc <= 9'b000000000;
 			1'b0: next_pc <= increment_out;
@@ -53,7 +53,7 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 		endcase
 	end
 
-	always @* begin
+	always @* begin		//implementing the address selection register
 		case(addr_sel)
 			1'b1: mem_addr <= PC;
 			1'b0: mem_addr <= data_address_out;
@@ -61,7 +61,7 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 		endcase
 	end
 
-	assign increment_out = PC + 9'b000000001;
+	assign increment_out = PC + 9'b000000001;	//when clock rises and load_pc is enabled, the pc register now holds the former pc value + 1
 
 	
 

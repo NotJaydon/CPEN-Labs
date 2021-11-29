@@ -106,7 +106,7 @@ always @* begin	//continuously updates present state and outputs based on the pa
     endcase
 end
 
-assign {state_next, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, reset_pc, load_pc, addr_sel, mem_cmd, load_ir, load_addr} = next;
+assign {state_next, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, reset_pc, load_pc, addr_sel, mem_cmd, load_ir, load_addr} = next;	//assigning all of the FSM outputs from the next input
 
 endmodule
 		
