@@ -61,8 +61,8 @@ end
 
 #60;
 
-if(TB.CPU.controller_fsm_1.present_state !== 5'b11111) begin //here we need to test whether the state machine stays
-	err = 1'b1;					     //stays in the halt state
+if(TB.CPU.controller_fsm_1.present_state !== 5'b11111) begin
+	err = 1'b1;
 	$display("fsm should stay in halt stage");
 end
 
