@@ -1,0 +1,37 @@
+Sun Nov 28 17:52:34 PST 2021
+Trace back: can't read "panedwindows(source)": no such element in array
+    while executing
+"lappend retval $panedwindows($tabname)"
+    (object "::.main_pane.cs.13.ts" method "::mtiwidgets::DraggableTabset::OrderedWindowList" body line 6)
+    invoked from within
+"$itk_component(ts) OrderedWindowList "
+    (object "::.main_pane.cs.13" method "::mtiwidgets::Tabbedwindow::OrderedWindowList" body line 2)
+    invoked from within
+"OrderedWindowList"
+    (object "::.main_pane.cs.13" method "::mtiwidgets::Tabbedwindow::panes" body line 3)
+    invoked from within
+"panes"
+    (object "::.main_pane.cs.13" method "::mtiwidgets::Tabbedwindow::_tabselect" body line 4)
+    invoked from within
+"::.main_pane.cs.13 _tabselect 0"
+    (in namespace inscope "::mtiwidgets::Tabbedwindow" script line 1)
+    invoked from within
+"namespace inscope ::mtiwidgets::Tabbedwindow {::.main_pane.cs.13 _tabselect} 0"
+    ("eval" body line 1)
+    invoked from within
+"eval [concat $newCmd $reqTab]"
+    (object "::.main_pane.cs.13.ts" method "::mtiwidgets::Tabset::select" body line 60)
+    invoked from within
+"select $tab"
+    (object "::.main_pane.cs.13.ts" method "::mtiwidgets::Tabset::_selectName" body line 13)
+    invoked from within
+"_selectName $tabName"
+    (object "::.main_pane.cs.13.ts" method "::mtiwidgets::Tabset::_B1" body line 15)
+    invoked from within
+"::.main_pane.cs.13.ts _B1 drag ::.main_pane.cs.13.ts-tab0 1072 227"
+    (in namespace inscope "::mtiwidgets::Tabset" script line 1)
+    invoked from within
+"namespace inscope ::mtiwidgets::Tabset {::.main_pane.cs.13.ts _B1 drag ::.main_pane.cs.13.ts-tab0 1072 227}"
+    (command bound to event)
+  <2:E:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/tk8.5/bgerror.tcl:92: ::tkerror {can't read "panedwindows(source)": no such element in array}
+  <1:eval:1: ::tk::dialog::error::bgerror {can't read "panedwindows(source)": no such element in array}

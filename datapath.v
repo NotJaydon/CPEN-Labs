@@ -1,7 +1,7 @@
 module datapath(clk, readnum, vsel, loada, loadb, shift, asel, bsel, ALUop, loadc,
 		loads, writenum, write, sximm8, sximm5, Z_out, datapath_out, mdata, PC);
 	input [15:0] sximm8, mdata, sximm5;
-	input [7:0] PC;
+	input [8:0] PC;
 	input [3:0] vsel;
 	input clk, write, loada, loadb, asel, bsel, loadc, loads;
 	input [2:0] readnum, writenum;
@@ -17,7 +17,7 @@ module datapath(clk, readnum, vsel, loada, loadb, shift, asel, bsel, ALUop, load
 		case (vsel)
 			4'b1000: data_in = mdata;
 			4'b0100: data_in = sximm8;
-			4'b0010: data_in = {8'b00000000, PC};
+			4'b0010: data_in = {7'b00000000, PC};
 			4'b0001: data_in = datapath_out;
 			default: data_in = {16{1'bx}};
 		endcase

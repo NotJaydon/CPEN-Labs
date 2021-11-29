@@ -42,7 +42,7 @@ output write, loada, loadb, asel, bsel, loadc, loads, load_pc, load_ir, reset_pc
 //Make states for MNONE, MREAD, MWRITE - resolved
 
 wire [4:0] present_state, state_next_reset, state_next;
-reg [24:0] next;	//change the width of next - resolved
+reg [25:0] next;	//change the width of next - resolved
 
 vDFF #(5) STATE(.clk(clk), .in(state_next_reset), .out(present_state)); //simple flipflop module to change 
 									//states on risedge of clock
@@ -91,7 +91,7 @@ always @* begin	//continuously updates present state and outputs based on the pa
 	{`buff1, 2'bxx, 3'b011}: next <= {`buff2, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b1};
 	{`buff1, 2'bxx, 3'b100}: next <= {`str1, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b1};
 	{`buff2, 2'bxx, 3'bxxx}: next <= {`load, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MREAD, 1'b0, 1'b0};
-	{`load, 2'bxx, 3'bxxx}: next <= {`IF1, 4'b1000, 3'b010, 1'b1, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b0}; //not sure if addr_sel can be x now
+	{`load, 2'bxx, 3'bxxx}: next <= {`IF1, 4'b1000, 3'b010, 1'b1, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MREAD, 1'b0, 1'b0}; //not sure if addr_sel can be x now
 
 	{`str1, 2'bxx, 3'bxxx}: next <= {`str2, 4'bxxxx, 3'b010, 1'b0, 1'b1, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b0};
 	{`str2, 2'bxx, 3'bxxx}: next <= {`strval, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b0};
@@ -102,7 +102,7 @@ always @* begin	//continuously updates present state and outputs based on the pa
 	{`movregtres, 2'bxx, 3'bxxx}: next <= {`IF1, 4'b0001, 3'b010, 1'b1, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b0};	//not sure aobut IF1
 
 	{`compare, 2'bxx, 3'bxxx}: next <= {`IF1, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b0};	//not sure aobut IF1
-	default: next = {25{1'bx}};
+	default: next = {26{1'bx}};
     endcase
 end
 

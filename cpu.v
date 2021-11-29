@@ -16,12 +16,12 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 	output N, V, Z;
 
 	wire [15:0] instruc, sximm8, sximm5;
-	wire [8:0] PC, data_address_out;
+	wire [8:0] PC, data_address_out, increment_out;
 	wire [3:0] vsel;
 	wire [2:0] opcode, writenum, readnum, nsel;
 	wire [1:0] op, shift, ALUop;
 	wire write, loadb, loada, asel, bsel, loadc, loads, load_ir, load_pc, reset_pc, addr_sel, load_addr;
-	wire increment_out;
+	//wire increment_out;
 
 	reg [8:0] next_pc, mem_addr;
 	instrucreg instrucreg_1 (.clk(clk), .in(read_data), .load(load_ir), .out(instruc));	//Instantiating our instruction register which will store our input instructions
@@ -34,7 +34,7 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 		    .shift(shift), .asel(asel), .bsel(bsel), .ALUop(ALUop), .loadc(loadc),
 		    .loads(loads), .writenum(writenum), .write(write), .sximm8(sximm8),
 		    .sximm5(sximm5), .Z_out({N, V, Z}), .datapath_out(out),
-		    .mdata(read_data), .PC({8{1'b0}}));
+		    .mdata(read_data), .PC(PC));
 
 	controller_fsm controller_fsm_1(.mem_cmd(mem_cmd), .load_pc(load_pc), .load_ir(load_ir), 
 		    			.reset_pc(reset_pc), .addr_sel(addr_sel), .reset(reset), .opcode(opcode), .op(op),
@@ -47,21 +47,21 @@ module cpu(clk, reset, mem_cmd, mem_addr, out, read_data, N, V, Z);	//i think ou
 
 	always @* begin
 		case(reset_pc)
-			1'b1: next_pc = 9'b000000000;
-			1'b0: next_pc = increment_out;
+			1'b1: next_pc <= 9'b000000000;
+			1'b0: next_pc <= increment_out;
 			default: next_pc = 9'bxxxxxxxxx;
 		endcase
 	end
 
 	always @* begin
 		case(addr_sel)
-			1'b1: mem_addr = PC;
-			1'b0: mem_addr = data_address_out;
+			1'b1: mem_addr <= PC;
+			1'b0: mem_addr <= data_address_out;
 			default: mem_addr = 9'bxxxxxxxxx;
 		endcase
 	end
 
-	assign increment_out = PC + 1;
+	assign increment_out = PC + 9'b000000001;
 
 	
 
