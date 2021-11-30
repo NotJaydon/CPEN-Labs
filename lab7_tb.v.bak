@@ -22,44 +22,44 @@ initial begin
 err = 1'b0;
 KEY[1] = 1'b0;
 
-if(TB.MEM.mem[0] !== 16'b1101000000000111) begin //checing that the memory contains the right instructions
+if(TB.MEM.mem[0] !== 16'b1101000000001111) begin //checking that the memory contains the right instructions
 	err = 1'b1;
 	$display("mem didnt load with correct instructions");
 end
 #10;
 KEY[1] = 1'b1;
 
-#60;
-if(TB.CPU.DP.REGFILE.R0 !== 16'b0000000000000111) begin //checking that we moved 7 to r0
+#60;	//MOV instruction takes 6 clock cycles starting from reset to get back to IF1
+if(TB.CPU.DP.REGFILE.R0 !== 16'b0000000000001111) begin //checking that we moved 15 to r0
 	err = 1'b1;
-	$display("R0 doesnt contain 7"); 
+	$display("R0 doesnt contain 15"); 
 end
 
-#60;
-if(TB.CPU.DP.REGFILE.R1 !== 16'b0000000000000010) begin //checking that we moved 2 to r1
+#50;	//MOV instruction takes 5 clock cycles starting from IF1 to get back to IF1
+if(TB.CPU.DP.REGFILE.R1 !== 16'b0000000000010010) begin //checking that we moved 18 to r1
 	err = 1'b1;
-	$display("R1 doesnt contain 2"); 
+	$display("R1 doesnt contain 18"); 
 end
 
-#70;
-if(TB.CPU.DP.REGFILE.R2 !== 16'b0000000000010000) begin //checking that the addition to r2 worked
+#80;	//ALU instructions other than CMP take 7 clock cycles starting from IF1 to get back to IF1
+if(TB.CPU.DP.REGFILE.R2 !== 16'b0000000000110000) begin //checking that the addition to r2 worked
 	err = 1'b1;
-	$display("R2 doesnt contain 16"); 
+	$display("R2 doesnt contain 48"); 
 end
-#100;
-if(TB.MEM.mem[17]!== 16'b0000000000000010) begin //the next instr is to store the contents of r1 into the [r2 + 1)]
-	err = 1'b1;				 //so we check that mem 17 contains 2
-	$display("Error mem[17] should contain 2");
+#100;	//STR instruction takes 10 clock cycles  starting from IF1 to get back to IF1
+if(TB.MEM.mem[49]!== 16'b0000000000010010) begin 	//the next instr is to store the contents of r1 into the [r2 + 1)]
+	err = 1'b1;				 	//so we check that mem 49 contains 18 since r2 had 48
+	$display("Error mem[49] should contain 18");
 end
 
-#90; 
-if(TB.CPU.DP.REGFILE.R1 !== 16'b0000000000000010) begin //the next instr is to load the contents of [r2 + 1] back
+#90; 	//LDR instruction takes 9 clock cycles starting from IF1 to get back to IF1
+if(TB.CPU.DP.REGFILE.R3 !== 16'b0000000000010010) begin //the next instr is to load the contents of [r2 + 1] back
 	err = 1'b1;					//into R3
-	$display("Error, R3 should contain 2");
+	$display("Error, R3 should contain 18");
 end
 
 
-#60;
+#60;	//HALT state takes 4 clock cycles to get to from IF1 but we set the delay to 6 clock cycles so that we can see if it stays in the halt state
 
 if(TB.CPU.controller_fsm_1.present_state !== 5'b11111) begin //here we need to test whether the state machine stays
 	err = 1'b1;					     //stays in the halt state
