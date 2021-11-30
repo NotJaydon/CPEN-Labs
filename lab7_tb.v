@@ -22,7 +22,7 @@ initial begin
 err = 1'b0;
 KEY[1] = 1'b0;
 
-if(TB.MEM.mem[0] !== 16'b1101000000000111) begin //checing that the memory contains the right instructions
+if(TB.MEM.mem[0] !== 16'b1101000000001111) begin //checing that the memory contains the right instructions
 	err = 1'b1;
 	$display("mem didnt load with correct instructions");
 end
@@ -30,30 +30,30 @@ end
 KEY[1] = 1'b1;
 
 #60;
-if(TB.CPU.DP.REGFILE.R0 !== 16'b0000000000000111) begin //checking that we moved 7 to r0
+if(TB.CPU.DP.REGFILE.R0 !== 16'b0000000000001111) begin //checking that we moved 15 to r0
 	err = 1'b1;
 	$display("R0 doesnt contain 7"); 
 end
 
 #60;
-if(TB.CPU.DP.REGFILE.R1 !== 16'b0000000000000010) begin //checking that we moved 2 to r1
+if(TB.CPU.DP.REGFILE.R1 !== 16'b0000000000010010) begin //checking that we moved 18 to r1
 	err = 1'b1;
 	$display("R1 doesnt contain 2"); 
 end
 
 #70;
-if(TB.CPU.DP.REGFILE.R2 !== 16'b0000000000010000) begin //checking that the addition to r2 worked
+if(TB.CPU.DP.REGFILE.R2 !== 16'b0000000000110000) begin //checking that the addition to r2 worked
 	err = 1'b1;
 	$display("R2 doesnt contain 16"); 
 end
 #100;
-if(TB.MEM.mem[17]!== 16'b0000000000000010) begin //the next instr is to store the contents of r1 into the [r2 + 1)]
-	err = 1'b1;				 //so we check that mem 17 contains 2
+if(TB.MEM.mem[49]!== 16'b0000000000010010) begin //the next instr is to store the contents of r1 into the [r2 + 1)]
+	err = 1'b1;				 //so we check that mem 49 contains 18
 	$display("Error mem[17] should contain 2");
 end
 
 #90; 
-if(TB.CPU.DP.REGFILE.R1 !== 16'b0000000000000010) begin //the next instr is to load the contents of [r2 + 1] back
+if(TB.CPU.DP.REGFILE.R1 !== 16'b0000000000010010) begin //the next instr is to load the contents of [r2 + 1] back
 	err = 1'b1;					//into R3
 	$display("Error, R3 should contain 2");
 end
