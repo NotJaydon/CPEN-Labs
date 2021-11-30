@@ -62,10 +62,18 @@ assign state_next_reset = reset ? `RST : state_next; //checks to see if reset is
 always @* begin	//continuously updates present state and outputs based on the past state and inputs
 		//state, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, reset_pc, load_pc, addr_sel, mem_cmd, load_ir, load_addr
    casex({present_state, op, opcode}) //checking state and inputs
-	{`RST, 2'bxx, 3'bxxx}: next <= {`IF1, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, `MNONE, 1'b0, 1'b0};	//Not sure but for now, addr_sel is 1'bx, could be 0 as shown in diagram
-	{`IF1, 2'bxx, 3'bxxx}: next <= {`IF2, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, `MREAD, 1'b0, 1'b0};	//addr_sel state NOT RESOLVED
+	//Reset state where we will reset the program counter by loading all 0's into the PC register
+	{`RST, 2'bxx, 3'bxxx}: next <= {`IF1, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, `MNONE, 1'b0, 1'b0};
+	//first stage of instruction fetch. PC register contains the address of the instruction in RAM and we select this in the multiplexer
+	{`IF1, 2'bxx, 3'bxxx}: next <= {`IF2, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, `MREAD, 1'b0, 1'b0};
+	//second stage in which the contents of the read address now appear on the read_data line. IR is loaded with this information/command
 	{`IF2, 2'bxx, 3'bxxx}: next <= {`UpdatePC, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, `MREAD, 1'b1, 1'b0};
+	//next_pc already had the address of the next instruction to be executed so we clock to load this new address into the PC register
 	{`UpdatePC, 2'bxx, 3'bxxx}: next <= {`decode, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, `MNONE, 1'b0, 1'b0};
+	/*a string of decode stages. if the opcode is 101, 011 or 100, we move to get a which is a common starting point
+	 *for the ALU, LDR and STR instructions. If 110, we move to either the starting state of move immediate
+	 *or move register contents based on the op "code" given. Finally, if opcode is 111, we go to the halt state
+	 */
 	{`decode, 2'bxx, 3'b101}: next <= {`geta, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b0};
 	{`decode, 2'bxx, 3'b011}: next <= {`geta, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b0};
 	{`decode, 2'bxx, 3'b100}: next <= {`geta, 4'bxxxx, 3'bxxx, 1'b0, 1'b0, 1'b0, 1'bx, 1'bx, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, `MNONE, 1'b0, 1'b0};
@@ -106,7 +114,7 @@ always @* begin	//continuously updates present state and outputs based on the pa
     endcase
 end
 
-assign {state_next, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, reset_pc, load_pc, addr_sel, mem_cmd, load_ir, load_addr} = next;
+assign {state_next, vsel, nsel, write, loadb, loada, asel, bsel, loadc, loads, reset_pc, load_pc, addr_sel, mem_cmd, load_ir, load_addr} = next;	//assigning all of the FSM outputs from the next input
 
 endmodule
 		
