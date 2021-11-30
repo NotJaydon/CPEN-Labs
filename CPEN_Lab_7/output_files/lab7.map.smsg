@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at cpu.v(49): always construct contains both blocking and non-blocking assignments File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/cpu.v Line: 49
+Warning (10268): Verilog HDL information at cpu.v(57): always construct contains both blocking and non-blocking assignments File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/cpu.v Line: 57
+Warning (10268): Verilog HDL information at controller_fsm.v(64): always construct contains both blocking and non-blocking assignments File: C:/Users/jadan/OneDrive/Desktop/CPEN Labs/controller_fsm.v Line: 64
